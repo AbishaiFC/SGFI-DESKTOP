@@ -1,0 +1,53 @@
+@import '../../../../../styles/font-sizes';
+@import '../../../../../styles/colors';
+@import '../../../../../styles/spacings';
+
+
+/**
+ * =============================================================================
+ *                            EMPTY - GRÁFICA DE VENTAS
+ * =============================================================================
+ * 
+ * Objetivo del componente:
+ * Este componente es la aplicación de la "app-white-card" para manejar un contexto
+ * del estado vacío de la gráfica comparativa de ventas.
+ *
+ *
+ * Principios de diseño aplicados:
+ * "app-white-card" es el componente wrapper reutilizable el cual se aplica en este
+ * componente para mantener las reglas de diseño definidas. 
+ *
+ * Estructura visual esperada:
+ * ┌────────────────────────────────────────┐
+ * │            app-white-card              │
+ * │  ┌─────────────────────────────────┐   │
+ * │  │                                 │   │
+ * │  │            app-title            │   │
+ * │  │         -------------------     │   │
+ * │  │         → gap: $spacing-4       │   │
+ * │  │                                 │   │
+ * │  │          <p> Texto grande       │   │
+ * │  │              <img />            │   │
+ * │  │                                 │   │
+ * │  └─────────────────────────────────┘   │
+ * └────────────────────────────────────────┘
+ */
+
+app-white-card {
+    display: flex;
+    flex-direction: column;
+
+    div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: $spacing-12;
+        gap: $spacing-4;
+
+        p{
+            color: $neutral-700;
+            font-size: $font-size-xl;
+        }
+    }
+}

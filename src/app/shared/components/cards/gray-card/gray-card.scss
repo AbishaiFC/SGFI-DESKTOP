@@ -1,0 +1,9 @@
+@import '../../../../../styles/colors';
+@import '../../../../../styles/border-radius';
+@import '../../../../../styles/spacings';
+
+div{
+    background-color: $neutral-400;
+    border-radius: $radius-4;
+    padding: $spacing-3;
+}

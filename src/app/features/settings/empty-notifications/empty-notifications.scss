@@ -1,0 +1,62 @@
+@import '../../../../styles/spacings';
+@import '../../../../styles/colors';
+@import '../../../../styles/font-sizes';
+
+/**
+ * =============================================================================
+ *                       EMPTY STATE – NOTIFICACIONES
+ * =============================================================================
+ * 
+ * Objetivo del componente:
+ * Mostrar un estado vacío amigable y tranquilizador cuando el usuario no tiene 
+ * notificaciones pendientes (nuevas, sin leer o importantes).
+ *
+ * Casos de uso reales:
+ * - Primera vez que entra al sistema (sin alertas de stock)
+ * - Después de limpiar manualmente el centro de notificaciones
+ *
+ *
+ * Estructura visual esperada:
+ * ┌────────────────────────────────────────┐
+ * │          app-white-card                │
+ * │  ┌─────────────────────────────────┐   │
+ * │  │  app-title-card                 │   │
+ * │  ├─────────────────────────────────┤   │
+ * │  │  div                            │   │
+ * │  │  ┌────────────────────────────┐ │   │
+ * │  │  │   <p>                      │ │   │
+ * │  │  ├────────────────────────────┤ │   │
+ * │  │  │             svg            │ │   │
+ * │  │  └────────────────────────────┘ │   │
+ * │  └─────────────────────────────────┘   │
+ * └────────────────────────────────────────┘
+ */
+
+app-white-card {
+    display: flex;
+    flex-direction: column;
+
+    app-title-card {
+        text-align: left;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        margin: $spacing-4;
+        align-items: center;
+        justify-content: center;
+        gap: $spacing-4;
+
+        p {
+            font-size: $font-size-2xl;
+            color: $neutral-600;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        img {
+            width: 40%;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+<div class="current">
+    <div class="products">
+        <app-title [icon]=false title="Productos"/>
+        <app-gray-card>
+            <app-current-empty />
+        </app-gray-card>
+    </div>
+    <div class="cart">
+        <app-title [icon]=true />
+        <app-gray-card>
+            <app-cart-empty />
+        </app-gray-card>
+    </div>
+    <button mat-icon-button routerLink="/login">
+        <mat-icon class="material-icons-outlined icon-cart" fontIcon="chevron_right"></mat-icon>
+    </button>
+</div>

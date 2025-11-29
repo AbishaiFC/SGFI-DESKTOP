@@ -1,0 +1,43 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/gradients';
+@import '../../../../styles/spacings';
+@import '../../../../styles/font-sizes';
+@import '../../../../styles/font-weights';
+@import '../../../../styles/border-radius';
+
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .main-icon {
+        background: $gradient-primary-vt;
+        padding: $spacing-1;
+        border-radius: $radius-1;
+        color: $neutral-100;
+    }
+
+    .trending {
+        background-color: $neutral-400;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        justify-content: center;
+        padding: $spacing-1 $spacing-2 $spacing-1 $spacing-2;
+        border-radius: $radius-1;
+        gap: $spacing-2;
+    }
+
+}
+
+h2 {
+    color: $neutral-900;
+    font-size: $font-size-2xl;
+    margin: $spacing-4 0 $spacing-4 0;
+}
+
+p {
+    color: $neutral-700;
+    font-size: $font-size-md;
+    margin: $spacing-2 0 $spacing-2 0;
+}

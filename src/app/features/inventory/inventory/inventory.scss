@@ -1,0 +1,23 @@
+@import '../../../../styles/spacings';
+
+.page {
+    margin: $spacing-4;
+    display: flex;
+    flex-direction: row;
+    gap: $spacing-8;
+    padding-bottom: $spacing-4;
+
+    .table {
+        flex: 1 1 0;
+        
+    }
+    .form {
+        flex: 0 0 30%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .page {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,60 @@
+@import '../../../../styles/spacings';
+
+/**
+ * =============================================================================
+ *                            SETTINGS PAGE LAYOUT
+ * =============================================================================
+ * 
+ * Objetivo del archivo:
+ * Definir el layout completo y responsive de la página "Configuración de la cuenta" 
+ * del sistema, que muestra el perfil/acciones rápidas del usuario a la izquierda y la lista completa
+ * de notificaciones ocupando la mayor parte de la pantalla.
+ *
+ * Estructura general de la página (desktop):
+ * ┌──────────────────────────────────────────────────────────────────────────┐
+ * │ .page (flex row)                                                         │
+ * │   ├─ .account       (flex: 1 1 300px)  → Perfil rápido + acciones usuario │
+ * │   └─ .notifications (flex: 3 1 70%)     → Lista completa de notificaciones│
+ * └──────────────────────────────────────────────────────────────────────────┘
+ *
+ * En ≤1024px → todo pasa a columna vertical (perfil arriba, notificaciones abajo)
+ */
+.page {
+    display: flex;
+    flex-direction: row;
+    padding: $spacing-4;
+    gap: $spacing-4;
+
+    /* --------------------------------------------------------------------- 
+                Card izquierda – Perfil y acciones rápidas del usuario
+     --------------------------------------------------------------------- */
+    .account{
+        /* ancho mínimo razonable, crece si hay espacio */
+        flex: 1 1 300px;                  
+        /* evita que se vuelva ilegible en pantallas medianas */
+        min-width: 280px;                  
+    }
+
+    /* --------------------------------------------------------------------- 
+     Área principal – Lista completa de notificaciones (prioridad visual)
+     --------------------------------------------------------------------- */
+  .notifications {
+        /* ocupa la mayor parte del espacio disponible */
+        flex: 3 1 70%;                     
+        /* permite overflow interno en tablas/listas largas */
+        min-width: 0;                          
+    }
+}
+
+/* ==========================================================================
+                    MEDIA QUERIES – Responsive breakpoints
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------- 
+             Tablets y laptops pequeñas (≤1024px) → layout en columna
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .page {
+        flex-direction: column;
+    }
+}

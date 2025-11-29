@@ -1,0 +1,58 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/spacings';
+@import '../../../../styles/font-sizes';
+@import '../../../../styles/border-radius';
+
+/**
+ * =============================================================================
+ *                              EXCEL EXPORT PREVIEW CARD
+ * =============================================================================
+ * 
+ * Objetivo del componente:
+ * Variante específica de app-white-card que muestra una previsualización minimalista
+ * y clara de los datos que se incluirán en el archivo Excel al hacer clic en descargar.
+ *
+ * Casos de uso:
+ * - Dashboard → sección de exportación de reportes
+ * - Siempre aparece justo debajo del botón de descarga
+ * - Sirve como confirmación visual de rango de fechas y cantidad de registros
+ *
+ * Estructura visual esperada:
+ * ┌────────────────────────────────────────┐
+ * │          app-white-card                │
+ * │  ┌─────────────────────────────────┐   │
+ * │  │  app-title-card                 │   │
+ * │  ├─────────────────────────────────┤   │
+ * │  │  div                            │   │
+ * │  │      app-button                 │   │
+ * │  ├─────────────────────────────────┤   │
+ * │  │  div                            │   │
+ * │  │    <p>                          │   │
+ * │  │    <p>                          │   │
+ * │  │                                 │   │
+ * │  └─────────────────────────────────┘   │
+ * └────────────────────────────────────────┘
+ */
+
+
+app-white-card{
+    .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .preview {
+        background-color: $neutral-300;
+        margin: $spacing-2;
+        padding: $spacing-3;
+        text-align: center;
+        color: $neutral-700;
+        font-size: $font-size-lg;
+        border-radius: $radius-2;
+
+        p{
+            margin: $spacing-1;
+        }
+    }
+}

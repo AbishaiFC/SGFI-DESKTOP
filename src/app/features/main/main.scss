@@ -1,0 +1,137 @@
+@import '../../../styles/spacings';
+
+/**
+ * =============================================================================
+ *                            DASHBOARD PAGE LAYOUT
+ * =============================================================================
+ * 
+ * Objetivo del archivo:
+ * Definir el layout responsive de la página principal del Dashboard usando
+ * únicamente Flexbox y CSS Grid (sin depender de librerías de UI).
+ *
+ * Principios de diseño aplicados:
+ * 1. Mobile-first en los breakpoints (aunque aquí declaramos desktop → mobile)
+ * 2. Proporciones 70/30 como estándar visual en secciones con chart + card
+ * 3. Mínimo 300px en cards para evitar que los contenidos se aplasten
+ * 4. Uso exclusivo de variables de spacing del design system ($spacing-*)
+ *
+ * Estructura general de la página:
+ * ┌─────────────────────────────────────────────────────────────┐
+ * │ .page (flex column)                                         │
+ * │   ├─ .kpi            → 4 columnas en desktop (grid)         │
+ * │   ├─ .sales-kpi      → chart (70%) + products sidebar (30%) │
+ * │   └─ .inventory-kpi  → value card (30%) + table (70%)       │
+ * └─────────────────────────────────────────────────────────────┘
+ */
+
+
+.page {
+    margin: $spacing-4; 
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-4;
+}
+
+/* ==========================================================================
+                            1. KPI CARDS – GRID
+   ========================================================================== */
+.kpi {
+    display: grid;
+    /* 4 tarjetas en escritorio */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: $spacing-4;
+}
+
+/* ==========================================================================
+            2. SALES KPI – Chart (70%) + Products Sidebar (30%)
+   ========================================================================== */
+.sales-kpi {
+    display: flex;
+    flex-direction: row;
+    /* separación mayor porque hay mucho contenido visual */
+    gap: $spacing-8;
+    
+    /* Chart ocupa todo el espacio disponible después del sidebar */
+    .chart {
+        /* PROPORCIÓN 1: Se encoge y tiene una base del 70% */
+        flex: 1 1 70%; 
+        /* Usamos flex-grow: 1 para que ocupe el espacio restante después del products */
+    }
+
+    /* Sidebar de productos nunca debe ser más pequeño de 300px */
+    .products {
+        /* PROPORCIÓN 2: Fijo, base del 30% (mínimo 300px para evitar que se aplaste) */
+        flex: 0 0 30%; 
+        min-width: 300px;
+    }
+}
+
+/* ==========================================================================
+            3. INVENTORY KPI – Value Card (30%) + Table (70%)
+   ========================================================================== */
+.inventory-kpi {
+    display: flex;
+    flex-direction: row;
+    gap: $spacing-8;
+    /* separación visual para dejar espacio en la sección inferior */
+    padding-bottom: $spacing-4;
+    
+    .value {
+        /* PROPORCIÓN 1: Fijo, base del 30% (Ideal para un resumen en tarjeta) */
+        flex: 0 0 30%; 
+        min-width: 300px;
+    }
+    .table {
+        /* PROPORCIÓN 2: Crece para llenar el espacio, base del 70% */
+        flex: 1 1 70%; 
+    }
+}
+
+
+/* ==========================================================================
+                    MEDIA QUERIES – Responsive breakpoints
+   ========================================================================== */
+
+
+/* -------------------------------------------------------------------------- 
+                Tablet pequeña & laptops pequeñas (≤1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    /* KPI cards pasan a 2 columnas para no quedar demasiado apretadas */
+    .kpi {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Todas las secciones 70/30 se convierten en pila vertical */
+    .sales-kpi,
+    .inventory-kpi {
+        flex-direction: column;
+        /* Reducimos el espacio en pantallas más pequeñas con gap de 8 a 4 */
+        gap: $spacing-4; 
+    }
+    
+    /* Los elementos que antes eran sidebar ahora ocupan el 100% del ancho */
+    .sales-kpi .products,
+    .inventory-kpi .value {
+        flex: 1 1 100%;
+        /* Quitamos el min-width para móvil */
+        min-width: auto; 
+    }
+}
+
+/* -------------------------------------------------------------------------- 
+                                Móvil (≤768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    /* Reducimos el margen general de la página */
+    .page {
+        margin: $spacing-2;
+    }
+
+    /* Reducimos la cuadrícula KPI a 1 columna */
+    .kpi {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
+}

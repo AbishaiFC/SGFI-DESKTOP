@@ -1,59 +1,143 @@
-# SGFIFRONTENDDESKTOP
+# SGFI - Desktop
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.10.
+## 🧩 Arquitectura General del Proyecto
 
-## Development server
+El proyecto sigue una arquitectura **modular**, basada en:
 
-To start a local development server, run:
+* **Feature Modules**
+* **Standalone Components**
+* **Clean Architecture ligera** (Domain / Core)
 
-```bash
-ng serve
+Este enfoque permite:
+
+* Separación clara de roles (**admin / vendedor**)
+* **Lazy loading** eficiente
+* Reutilización de lógica de negocio
+* Escalabilidad para integración futura con **Electron**
+* Compatibilidad con el modo offline de la aplicación móvil
+
+---
+
+## 📂 Estructura de Carpetas
+
+```
+src/
+└── app/
+    ├── core/                         # Lógica global y reutilizable
+    │   ├── auth/
+    │   │   ├── guards/               # AuthGuard, RoleGuard
+    │   │   ├── interceptors/         # JwtInterceptor, OfflineInterceptor
+    │   │   ├── services/             # auth.service, token.service
+    │   │   └── models/               # User, Role, JwtResponse
+    │   ├── services/                 # api.service, websocket.service
+    │   ├── utils/                    # Helpers, constants, pipes
+    │   └── interceptors/
+    │
+    ├── shared/                       # Componentes reutilizables
+    │   ├── components/               # header, sidebar, modals, dialogs
+    │   ├── models/                   # Producto, Venta, Métricas, etc.
+    │   ├── pipes/                    # currency, stock-alert
+    │   └── material.module.ts        # Import centralizado de Angular Material
+    │
+    ├── features/                     # Módulos principales lazy-loaded
+    │   ├── auth/                     # Login, register, change-password
+    │   ├── dashboard/                # Métricas principales
+    │   ├── inventory/                # Gestión de productos (solo admin)
+    │   ├── sales/                    # Punto de venta en tiempo real
+    │   ├── reports/                  # Reportes y exportación (solo admin)
+    │   └── settings/                 # Configuración de la cuenta
+    │
+    ├── app.component.ts
+    ├── app.routes.ts                 # Rutas principales
+    └── main.ts
+
+assets/
+environments/
+styles/
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## ✨ Características Destacadas
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+* **Modularidad total** para crecimiento limpio
+* **Optimización de rendimiento** con lazy loading
+* **Seguridad integrada** (JWT, guards por rol)
+* **Interfaz homogénea** con Shared Components
+* **Integración con WebSocket** para ventas en tiempo real
+* **Compatibilidad futura con escritorio (Electron)**
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🛡️ Seguridad
 
-```bash
-ng generate --help
-```
+* Autenticación con **JWT**
+* Guards por rol (**admin / vendedor**)
+* Interceptor para manejo de sesión
+* Interceptor **Offline** para tolerancia a fallos
 
-## Building
+---
 
-To build the project run:
+## 🧮 Módulos Principales
 
-```bash
-ng build
-```
+### **Sales**
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+* Punto de venta en tiempo real
+* Integración con escáner móvil
+* Historial de ventas
 
-## Running unit tests
+### **Dashboard** (Admin)
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+* Métricas
+* Productos más vendidos
+* Ventas del día
 
-```bash
-ng test
-```
+### **Inventory** (Admin)
 
-## Running end-to-end tests
+* CRUD de productos
+* Alertas de stock
+* Gestión detallada del inventario
 
-For end-to-end (e2e) testing, run:
 
-```bash
-ng e2e
-```
+### **Reports** (Admin)
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+* Reportes de ventas
+* Exportación a Excel
+* Filtros avanzados
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🔧 Core Services
+
+* `api.service` → Wrapper de HttpClient
+* `websocket.service` → Conexión en tiempo real
+* `auth.service` → Manejo de sesiones
+
+---
+
+## 🧱 Shared Layer
+
+### Componentes reutilizables
+
+* Sidebar
+* Header
+* Diálogos de confirmación
+
+### Pipes
+
+* Formato moneda
+* Indicadores de stock
+
+---
+
+## 🚀 Próximos pasos
+
+* Integración con **Electron**
+* Optimización de animaciones y tema visual
+* Conexión profunda con la app móvil
+
+---
+
+## 📌 Notas finales
+
+Este Readme resume la estructura completa del proyecto y sirve como guía para la arquitectura, escalabilidad y mantenimiento general del sistema.

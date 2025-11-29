@@ -1,0 +1,62 @@
+@import '../../../../../styles/font-sizes';
+@import '../../../../../styles/colors';
+@import '../../../../../styles/spacings';
+@import '../../../../../styles/border-radius';
+
+/**
+ * =============================================================================
+ *                                  INVENTORY VALUE
+ * =============================================================================
+ * 
+ * Objetivo del componente:
+ * Variante específica de app-white-card usada exclusivamente en la sección
+ * “Valor del inventario” del dashboard. Muestra el valor total actual del stock
+ * con un diseño diferenciado: barra horizontal destacada y botón de acción.
+ *
+ * Casos de uso:
+ * - Mostrar de forma rápida un resumen del valor actual del inventario
+ *
+ * Estructura visual esperada:
+ * ┌──────────────────────────────────────────┐
+ * │          app-white-card                  │
+ * │  ┌───────────────────────────────────┐   │
+ * │  │  app-title-card                   │   │
+ * │  │  ┌─────────────────────────────┐  │   │
+ * │  │  │div (barra destacada)        │  │   │
+ * │  │  │ → fondo $neutral-300        │  │   │
+ * │  │  │→ icono  +  valor grande     │  │   │
+ * │  │  └─────────────────────────────┘  │   │
+ * │  │  section (botón centrado)         │   │
+ * │  └───────────────────────────────────┘   │
+ * └──────────────────────────────────────────┘
+ */
+
+app-white-card {
+    display: flex;
+    flex-direction: column;
+
+    div{
+        background-color: $neutral-300;
+        margin: $spacing-12 $spacing-4 $spacing-12 $spacing-4;
+        gap: $spacing-4;
+        border-radius: $radius-2;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: $spacing-8 $spacing-12 $spacing-8 $spacing-12;
+
+        p{
+            color: $neutral-700;
+            font-size: $font-size-xl;
+        }
+    }
+
+    /* Zona inferior con botón de acción centrado */
+    section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: $spacing-2;
+    }
+}

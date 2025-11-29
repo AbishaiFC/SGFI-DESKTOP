@@ -1,0 +1,45 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/font-sizes';
+@import '../../../../styles/spacings';
+
+/**
+ * =============================================================================
+ *                  EMPTY STATE – VENTAS EN PROGRESO (CARRITO VACÍO)
+ * =============================================================================
+ * 
+ * Objetivo del componente:
+ * Mostrar un estado vacío claro, amigable y coherente cuando el usuario entra a la
+ * pantalla de “Ventas en progreso” y aún no ha iniciado ninguna venta.
+ *
+ * Casos de uso reales:
+ * - Usuario abre la caja pero todavía no ha escaneado ni agregado productos
+ * - Turno recién iniciado
+ * - Después de cancelar o finalizar todas las ventas en curso
+ * 
+ * Estructura visual esperada:
+ * ┌────────────────────────────────────────┐
+ * │            Página completa             │
+ * │  ┌─────────────────────────────────┐   │
+ * │  │  div (cart-empty)               │   │
+ * │  │  ┌────────────────────────────┐ │   │
+ * │  │  │  app-title                 │ │   │
+ * │  │  ├────────────────────────────┤ │   │
+ * │  │  │            svg             │ │   │
+ * │  │  └────────────────────────────┘ │   │
+ * │  └─────────────────────────────────┘   │
+ * └────────────────────────────────────────┘
+ */
+
+div {
+    padding: $spacing-12;
+
+    p{
+        color: $neutral-600;
+        text-align: center;
+        font-size: $font-size-2xl;
+    }
+
+    img{
+        width: 100%;
+    }
+}

@@ -1,0 +1,52 @@
+@import '../../../../../styles/font-sizes';
+@import '../../../../../styles/colors';
+@import '../../../../../styles/spacings';
+
+/**
+ * =============================================================================
+ *                                  EMPTY - TOP PRODUCTS
+ * =============================================================================
+ * 
+ * Objetivo del componente:
+ * Mostrar un estado vacío elegante dentro de la card de “Productos más vendidos”
+ * cuando aún no hay suficiente histórico de ventas o no hay productos registrados.
+ *
+ * Casos de uso:
+ * - Nueva tienda / cuenta recién creada
+ * - Primeros días sin ventas procesadas
+ * 
+ *
+ * Estructura visual esperada:
+ * ┌────────────────────────────────────────┐
+ * │            app-white-card              │
+ * │  ┌─────────────────────────────────┐   │
+ * │  │                                 │   │
+ * │  │            app-title            │   │
+ * │  │         -------------------     │   │
+ * │  │         → gap: $spacing-4       │   │
+ * │  │                                 │   │
+ * │  │          <p> Texto grande       │   │
+ * │  │              <img />            │   │
+ * │  │                                 │   │
+ * │  └─────────────────────────────────┘   │
+ * └────────────────────────────────────────┘
+ */
+
+app-white-card {
+    display: flex;
+    flex-direction: column;
+
+    div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: $spacing-12;
+        gap: $spacing-4;
+
+        p{
+            color: $neutral-700;
+            font-size: $font-size-xl;
+        }
+    }
+}

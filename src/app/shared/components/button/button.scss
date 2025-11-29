@@ -1,0 +1,25 @@
+@import '../../../../styles/gradients';
+@import '../../../../styles/colors';
+@import '../../../../styles/border-radius';
+
+
+button[mat-fab]{
+    background: $gradient-primary-ht;
+    color: $neutral-100;
+    transition: background 0.6s ease-in;
+    border-radius: $radius-2;
+    box-shadow: none;
+
+    mat-icon {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover{
+        background: $gradient-primary-hti;
+        box-shadow: none;
+        
+        mat-icon{
+            transform: scale(1.05) translateX(2px);
+        }
+    }
+}

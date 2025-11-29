@@ -1,0 +1,123 @@
+@import '../../../../../styles/gradients';
+@import '../../../../../styles/font-sizes';
+@import '../../../../../styles/font-weights';
+@import '../../../../../styles/colors';
+@import '../../../../../styles/spacings';
+@import '../../../../../styles/border-radius';
+
+.main-container {
+    background-color: $neutral-100;
+    height: 96px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: $spacing-4;
+    
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2{
+            font-size: $font-size-4xl;
+            margin: $spacing-6 0 $spacing-2 0;
+            color: $neutral-900;
+        }
+        p{
+            font-size: $font-size-lg;
+            color: $neutral-600;
+        }
+    }
+    
+    .user {
+        display: flex;
+        flex-direction: row;
+        margin: $spacing-4;
+        background: $neutral-400;
+        border-radius: $radius-3;
+        padding: $spacing-2;
+        gap: $spacing-2;
+
+        mat-icon{
+            border-radius: $radius-2 0 0 $radius-2;
+            padding: 0 $spacing-2 0 $spacing-2;
+            background: $gradient-primary-ht;
+            font-size: $font-size-4xl;
+            height: 100%;
+            width: 100%;
+            color: $neutral-100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        p {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $neutral-100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: $font-size-lg;
+            border-radius: 0 $radius-2 $radius-2 0;
+            padding: 0 $spacing-12 0 $spacing-12;
+            color: $neutral-900;
+            font-weight: $font-weight-light;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .main-container {
+        .title {
+            h2{
+                font-size: $font-size-3xl;
+                color: $neutral-900;
+            }
+            p{
+                font-size: $font-size-lg;
+                color: $neutral-600;
+            }
+        }
+
+        .user {
+            p {
+                font-size: $font-size-lg;
+                padding: 0 $spacing-4 0 $spacing-4;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        .title {
+            padding-top: $spacing-4;
+
+            h2{
+                font-size: $font-size-xl;
+                margin: 0px;
+                color: $neutral-900;
+            }
+            p{
+                font-size: $font-size-md;
+                color: $neutral-600;
+            }
+        }
+
+        .user {
+            mat-icon{
+                border-radius: $radius-2;
+            }
+
+            p {
+                z-index: 0;
+                position: absolute;
+                font-size: 0;
+                height: 0;
+                width: 0;
+            }
+        }
+    }
+}

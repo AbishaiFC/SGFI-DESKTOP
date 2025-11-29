@@ -1,0 +1,45 @@
+@import '../../../../styles/spacings';
+@import '../../../../styles/colors';
+@import '../../../../styles/font-sizes';
+
+/**
+ * =============================================================================
+ *                          EMPTY STATE – GRÁFICA DE VENTAS
+ * =============================================================================
+ * 
+ * Objetivo del componente:
+ * Variante de app-white-card usada cuando aún no hay datos suficientes para 
+ * renderizar la gráfica de ventas del mes (o cualquier otra).
+ *
+ * Casos de uso reales:
+ * - Usuario nuevo sin ventas registradas
+ * - Mes actual con cero movimientos
+ * - Filtro de fechas sin resultados
+ *
+ *
+ * Estructura exacta en producción:
+ * ┌────────────────────────────────────────┐
+ * │          app-white-card                │
+ * │  ┌─────────────────────────────────┐   │
+ * │  │  app-title-card                 │   │
+ * │  ├─────────────────────────────────┤   │
+ * │  │  div                            │   │
+ * │  │  ┌────────────────────────────┐ │   │
+ * │  │  │            svg             │ │   │
+ * │  │  └────────────────────────────┘ │   │
+ * │  └─────────────────────────────────┘   │
+ * └────────────────────────────────────────┘
+ */
+
+div {
+    padding: $spacing-12 $spacing-4 $spacing-12 $spacing-4;
+    gap: $spacing-4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 50%;
+    }
+}

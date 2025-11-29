@@ -1,0 +1,43 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/font-sizes';
+@import '../../../../styles/spacings';
+
+/**
+ * =============================================================================
+ *                                 EMPTY – PRODUCTS
+ * =============================================================================
+ * 
+ * Objetivo del componente:
+ * Estado vacío minimalista y de la card de productos aún no tiene datos o 
+ * contenido que mostrar.
+ *
+ * Casos de uso reales:
+ * - Página de “Ventas en progreso” sin productos registrados
+ *
+ * Estructura visual esperada:
+ * ┌────────────────────────────────────────────────────┐
+ * │                Página completa                     │
+ * │  ┌─────────────────────────────────────────────┐   │
+ * │  │  div                                        │   │
+ * │  │  ┌──────────────────────────────────────┐   │   │
+ * │  │  │    <p>                               │   │   │
+ * │  │  ├──────────────────────────────────────┤   │   │
+ * │  │  │                  svg                 │   │   │
+ * │  │  └──────────────────────────────────────┘   │   │
+ * │  └─────────────────────────────────────────────┘   │
+ * └────────────────────────────────────────────────────┘
+ */
+
+div {
+    padding: $spacing-12;
+
+    p{
+        color: $neutral-600;
+        text-align: center;
+        font-size: $font-size-2xl;
+    }
+
+    img{
+        width: 100%;
+    }
+}

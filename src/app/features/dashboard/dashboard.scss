@@ -1,0 +1,19 @@
+@import '../../../styles/colors';
+@import '../../../styles/spacings';
+
+mat-drawer-container{
+    height: 100vh;
+
+    mat-drawer{
+        width: 96px;
+        border-radius: 0px;
+
+    }
+
+    mat-drawer-content{
+        width: calc(100vw - 96px);
+        display: flex;
+        flex-direction: column;
+        background-color: $neutral-300;
+    }
+}

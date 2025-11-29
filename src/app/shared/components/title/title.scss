@@ -1,0 +1,30 @@
+@import '../../../../styles/gradients';
+@import '../../../../styles/colors';
+@import '../../../../styles/spacings';
+@import '../../../../styles/font-weights';
+@import '../../../../styles/font-sizes';
+
+section {
+  padding: $spacing-3;
+  color: $neutral-900;
+
+  h1 {
+    font-weight: $font-weight-bold;
+    font-size: $font-size-5xl;
+  }
+
+  mat-icon {
+    font-size: $font-size-6xl;
+    width: $font-size-6xl;
+    height: $font-size-6xl;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 500px;
+    height: 4px;
+    border-radius: 999px;
+    background: $gradient-primary-hs;
+  }
+}

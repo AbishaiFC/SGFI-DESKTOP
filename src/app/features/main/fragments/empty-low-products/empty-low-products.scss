@@ -1,0 +1,52 @@
+@import '../../../../../styles/font-sizes';
+@import '../../../../../styles/colors';
+@import '../../../../../styles/spacings';
+
+/**
+ * =============================================================================
+ *                           EMPTY – PRODUCTOS CON STOCK BAJO
+ * =============================================================================
+ * 
+ * Objetivo del componente:
+ * Mostrar un estado vacío/amigable dentro de la sección de productos del dashboard
+ * cuando no hay productos con stock bajo o crítico que necesiten atención.
+ *
+ * Casos de uso:
+ * - El usuario filtró por “stock bajo” pero todos los productos están bien abastecidos
+ * - Primera vez que entra un nuevo cliente/almacén sin alertas
+ * - Después de reponer stock y ya no quedan items en rojo/amarillo
+ *
+ * Estructura visual esperada:
+ * ┌────────────────────────────────────────┐
+ * │            app-white-card              │
+ * │  ┌─────────────────────────────────┐   │
+ * │  │                                 │   │
+ * │  │            app-title            │   │
+ * │  │         -------------------     │   │
+ * │  │         → gap: $spacing-4       │   │
+ * │  │                                 │   │
+ * │  │          <p> Texto grande       │   │
+ * │  │              <img />            │   │
+ * │  │                                 │   │
+ * │  └─────────────────────────────────┘   │
+ * └────────────────────────────────────────┘
+ */
+
+app-white-card {
+    display: flex;
+    flex-direction: column;
+
+    div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: $spacing-4;
+        gap: $spacing-4;
+
+        p{
+            color: $neutral-700;
+            font-size: $font-size-xl;
+        }
+    }
+}

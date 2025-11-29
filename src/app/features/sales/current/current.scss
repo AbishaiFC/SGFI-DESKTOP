@@ -1,0 +1,89 @@
+@import '../../../../styles/spacings';
+@import '../../../../styles/font-sizes';
+@import '../../../../styles/border-radius';
+@import '../../../../styles/colors';
+
+/**
+ * =============================================================================
+ *                              CURRENT SALE PAGE LAYOUT
+ * =============================================================================
+ * 
+ * Objetivo del archivo:
+ * Definir el layout completo y responsive de la pantalla principal de venta en curso
+ * (la más usada del sistema): lista de productos + carrito lateral + botón flotante.
+ *
+ * Estructura general de la página (desktop):
+ * ┌────────────────────────────────────────────────────────────────────────────┐
+ * │ .current (flex row)                                                        │
+ * │   ├─ .products (flex: 1)     → Catálogo / búsqueda de productos (≈80%)    │
+ * │   └─ .cart     (flex: 0 0 20%) → Carrito de venta actual                   │
+ * │                                                                            │
+ * │      botón flotante (mat-icon-button)                                      │
+ * │         posición fija top-right                                            │
+ * └────────────────────────────────────────────────────────────────────────────┘
+ *
+ * En ≤1200px → todo pasa a columna vertical (productos arriba, carrito abajo)
+ */
+
+.current {
+    display: flex;
+    padding: $spacing-8;
+    gap: $spacing-8;
+
+    /* --------------------------------------------------------------------- 
+                Zona principal – catálogo y búsqueda de productos
+     --------------------------------------------------------------------- */
+    .products {
+        flex: 1 1 0;
+    }
+    /* --------------------------------------------------------------------- 
+            Carrito lateral – ancho fijo del 20% para mantener legibilidad
+     --------------------------------------------------------------------- */
+    .cart {
+        /* proporción más estrecha que un sidebar normal */
+        flex: 0 0 20%;                       
+        /* punto de ruptura visual – evita que los precios se corten */
+        min-width: 280px;                    
+    }
+
+    /* --------------------------------------------------------------------- 
+                         Botón flotante de administrador
+     --------------------------------------------------------------------- */
+    button[mat-icon-button] {
+        position: fixed;
+        top: $spacing-8;
+        right: $spacing-8;
+        border-radius: $radius-2;
+        background-color: $neutral-300;
+        color: $neutral-800;
+
+        mat-icon {
+            font-size: $font-size-2xl;
+            width: $font-size-2xl;
+            height: $font-size-2xl;
+        }
+
+        &:hover{
+            border-radius: $radius-4;
+            background-color: $neutral-400;
+        }
+    }
+}
+
+/* ==========================================================================
+                    MEDIA QUERIES – Responsive breakpoints
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------- 
+        Tablets grandes y laptops pequeñas (≤1200px) → layout en columna
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+    .current{
+        flex-direction: column;
+
+        .products,
+        .cart {
+            flex: 0 0 100%;
+        }
+    }
+}

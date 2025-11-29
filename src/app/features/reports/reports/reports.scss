@@ -1,0 +1,61 @@
+@import '../../../../styles/spacings';
+
+/**
+ * =============================================================================
+ *                            SALES REPORT PAGE LAYOUT
+ * =============================================================================
+ * 
+ * Objetivo del archivo:
+ * Definir el layout responsive de la página completa de “Reporte de Ventas” 
+ *
+ * Estructura general de la página (desktop):
+ * ┌─────────────────────────────────────────────────────────────────────┐
+ * │ .page (flex row)                                                    │
+ * │   ├─ .table (flex: 1)    → Tabla principal de ventas (70% aprox)    │
+ * │   └─ .chart (30% fijo)   → Gráficos, filtros o resumen lateral      │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * En ≤1024px → todo pasa a columna vertical (tabla arriba, sidebar abajo)
+ */
+
+.page {
+    margin: $spacing-4;
+    display: flex;
+    flex-direction: row;
+    gap: $spacing-8;
+    padding-bottom: $spacing-4;
+
+    /* --------------------------------------------------------------------- 
+     Tabla principal – ocupa todo el espacio disponible (70% aproximado)
+     --------------------------------------------------------------------- */
+    .table {
+        flex: 1 1 0;
+        
+    }
+
+    /* --------------------------------------------------------------------- 
+                Panel lateral – siempre 30% y nunca se aplasta
+     --------------------------------------------------------------------- */
+    .chart {
+        /* ancho fijo proporcional */
+        flex: 0 0 30%;
+        /* punto de ruptura visual – evita que se vuelva ilegible */
+        min-width: 300px;                   
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-4;
+    }
+}
+
+/* ==========================================================================
+                       MEDIA QUERIES – Responsive breakpoints
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------- 
+                        Tablet & laptops pequeñas (≤1024px) 
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .page {
+        flex-direction: column;
+    }
+}

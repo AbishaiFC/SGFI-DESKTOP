@@ -1,0 +1,29 @@
+@import '../../../../../styles/spacings';
+@import '../../../../../styles/colors';
+@import '../../../../../styles/font-sizes';
+@import '../../../../../styles/font-weights';
+
+div {
+    height: 100%;
+    padding: $spacing-40;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    app-title {
+        text-align: center;
+    }
+
+    section{
+        display: flex;
+        gap: $spacing-2;
+        align-items: center;
+        color: $primary-100;
+        font-size: $font-size-xl;
+
+        a{
+            color: $primary-100;
+            font-weight: $font-weight-medium;
+        }
+    }
+}

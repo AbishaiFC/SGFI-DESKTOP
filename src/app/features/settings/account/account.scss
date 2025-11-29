@@ -1,0 +1,74 @@
+@import '../../../../styles/spacings';
+@import '../../../../styles/gradients';
+@import '../../../../styles/colors';
+@import '../../../../styles/font-sizes';
+@import '../../../../styles/border-radius';
+
+/**
+ * =============================================================================
+ *                              ACCOUNT SUMMARY CARD
+ * =============================================================================
+ * 
+ * Objetivo del componente:
+ * Tarjeta compacta y elegante que muestra los datos esenciales del usuario logueado
+ * y permite acciones rápidas (editar perfil, cambiar contraseña, eliminar cuenta, 
+ * etc.) directamente.
+ *
+ *
+ *
+ * Estructura visual esperada:
+ * ┌────────────────────────────────────────┐
+ * │          app-white-card                │
+ * │     ┌────────────────────────────┐     │
+ * │     │  Administrador             │     │
+ * │     │  usuario@tienda.com        │     │
+ * │     │  *********       │     │
+ * │     └────────────────────────────┘     │
+ * │              app-button                │
+ * └────────────────────────────────────────┘
+ */
+
+app-white-card {
+    section {
+        padding: $spacing-4;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        div{
+            strong {
+                color: $neutral-900;
+                font-size: $font-size-lg;
+                margin: $spacing-1 0 $spacing-1 0;
+            }
+
+            p {
+                font-size: $font-size-md;
+                margin: $spacing-2 0 $spacing-2 0;
+                color: $neutral-700;
+            }
+        }
+
+        button[mat-icon-button]{
+            background: $gradient-primary-ht;
+            border-radius: $radius-2;
+            color: $neutral-100;
+            transition: background 300ms ease-in-out;
+
+            &:hover {
+                background: $gradient-primary-hti;
+
+                mat-icon {
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: $spacing-4;
+    }
+}

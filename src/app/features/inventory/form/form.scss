@@ -1,0 +1,10 @@
+@import '../../../../styles/spacings';
+
+app-white-card {
+    div {
+        padding: $spacing-4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
