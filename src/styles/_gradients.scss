@@ -9,7 +9,9 @@ $gradient-primary-hs: linear-gradient(90deg, $primary-300 0%, $primary-100 100%)
 $gradient-primary-vs: linear-gradient(180deg, $primary-300 0%, $primary-100 100%);
 
 $gradient-accent-ht: linear-gradient(90deg, $accent-200 0%, $accent-100 100%);
+$gradient-accent-hti: linear-gradient(90deg, $accent-100 0%, $accent-200 100%);
 $gradient-accent-vt: linear-gradient(180deg, $accent-200 0%, $accent-100 100%);
+$gradient-accent-vti: linear-gradient(180deg, $accent-100 0%, $accent-200 100%);
 
 $gradient-accent-hs: linear-gradient(90deg, $accent-300 0%, $accent-100 100%);
 $gradient-accent-vs: linear-gradient(180deg, $accent-300 0%, $accent-100 100%);

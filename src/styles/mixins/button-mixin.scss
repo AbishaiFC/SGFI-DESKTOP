@@ -1,0 +1,25 @@
+@import '../gradients';
+@import '../colors';
+@import '../border-radius';
+
+
+@mixin button($gradient, $gradient-hover, $color: $neutral-100) {
+    background: $gradient;
+    color: $color;
+    transition: background 0.6s ease-in;
+    border-radius: $radius-2;
+    box-shadow: none;
+
+    mat-icon {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover {
+        background: $gradient-hover;
+        box-shadow: none;
+        
+        mat-icon {
+            transform: scale(1.05) translateX(2px);
+        }
+    }
+}

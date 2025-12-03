@@ -16,17 +16,17 @@
 
   .logo-container {
     width: 100%;
-    height: 96px;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     background: $gradient-primary-vs;
   
     .logo {
-      font-size: $font-size-6xl;
-      width: $font-size-6xl !important;
-      height: $font-size-6xl !important;
-      padding: $spacing-2;
+      font-size: $font-size-5xl;
+      width: $font-size-5xl !important;
+      height: $font-size-5xl !important;
+      padding: $spacing-1;
       color: $neutral-100;
       text-align: center;
     }

@@ -1,54 +1,25 @@
-@import '../../../../../styles/colors';
-@import '../../../../../styles/font-sizes';
-@import '../../../../../styles/spacings';
-@import '../../../../../styles/gradients';
-@import '../../../../../styles/border-radius';
+@import '../../../../../styles/mixins/sidebar-button-mixin.scss';
 
-section{
-    width:fit-content;
+
+section {
+    width: fit-content;
     background-color: $neutral-300;
     border-radius: $radius-2;
     justify-content: center;
     flex-direction: row;
+    align-items: center;
     display: flex;
     gap: 4px;
     cursor: pointer;
-
     padding: $spacing-2;
 
-    mat-icon {
-        width: $font-size-5xl;
-        height: $font-size-5xl;
-        font-size: $font-size-5xl;
-        background: $gradient-primary-vt;
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+    // Variante primaria
+    &.primary {
+        @include icon-button($gradient-primary-vt, $gradient-primary-vti, $gradient-primary-vs);
     }
 
-    div{
-        width: 4px;
-        height: 48px;
-        background: $gradient-primary-vs;
-        border-radius: 999px;
-    }
-
-    &:hover{
-        transition: background 0.6s ease-in;
-        background-color: $neutral-400;
-        
-        mat-icon{
-            transition: background 0.6s ease-in;
-            transform: scale(1.05);
-            background: $gradient-primary-vti;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        div{
-            transition: background 0.6s ease-in;
-            background: $gradient-primary-vti;
-        }
+    // Variante accent
+    &.accent {
+        @include icon-button($gradient-accent-vt, $gradient-accent-vti, $gradient-accent-vs);
     }
 }

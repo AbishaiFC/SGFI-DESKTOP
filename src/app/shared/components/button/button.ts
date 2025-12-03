@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import { MatIcon } from "@angular/material/icon";
 
@@ -10,5 +10,8 @@ import { MatIcon } from "@angular/material/icon";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Button {
+  @Input() color: string = "primary";
+  @Input({required: true}) icon: string = "";
+  @Input({required: true}) title: string = "";
 
 }

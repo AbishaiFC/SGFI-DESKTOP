@@ -1,0 +1,31 @@
+@import '../../../../styles/spacings';
+@import '../../../../styles/border-radius';
+@import '../../../../styles/colors';
+@import '../../../../styles/font-sizes';
+
+/* --------------------------------------------------------------------- 
+                      Botón flotante de administrador
+ --------------------------------------------------------------------- */
+button[mat-icon-button] {
+    position: fixed;
+    top: $spacing-8;
+    border-radius: $radius-2;
+    background-color: $neutral-300;
+    color: $neutral-800;
+    mat-icon {
+        font-size: $font-size-2xl;
+        width: $font-size-2xl;
+        height: $font-size-2xl;
+    }
+    &:hover{
+        border-radius: $radius-4;
+        background-color: $neutral-400;
+    }
+    &.left {
+        left: $spacing-8;
+    }
+    
+    &.right {
+        right: $spacing-8;
+    }
+}

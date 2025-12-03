@@ -1,11 +1,11 @@
 <app-white-card>
     <div class="card">
-        <mat-icon class="material-icons-outlined main-icon" fontIcon="attach_money"></mat-icon>
+        <mat-icon class="material-icons-outlined main-icon" [fontIcon]="icon"></mat-icon>
         <div class="trending">
             <mat-icon class="material-icons-outlined" fontIcon="trending_flat"></mat-icon>
             0%
         </div>
     </div>
-    <h2>Total de ventas del día</h2>
+    <h2>{{title}}</h2>
     <p>$0,00 MXN</p>
 </app-white-card>

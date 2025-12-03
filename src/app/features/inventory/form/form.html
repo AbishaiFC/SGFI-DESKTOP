@@ -1,6 +1,13 @@
 <app-white-card>
     <app-title-card title="Añadir producto"/>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <app-custom-input formControlName="barcode" label="Código de barras" typeValue="number" placeholder="ej. 123455678" prefixIcon="fit_screen" />
+        <app-custom-input formControlName="name" label="Nombre" typeValue="text" placeholder="ej. Leche" prefixIcon="label" />
+        <app-custom-input formControlName="price" label="Precio" typeValue="number" placeholder="ej. 120" prefixIcon="attach_money"/>
+        <app-custom-input formControlName="stock" label="Stock" typeValue="number" placeholder="ej. 12" prefixIcon="numbers"/>
+    </form>
     <div>
-        <app-button />
+        
+        <app-button icon="add" title="Añadir producto"/>
     </div>
 </app-white-card>

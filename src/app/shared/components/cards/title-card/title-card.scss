@@ -21,6 +21,16 @@ section {
     width: 100%;
     height: 4px;
     border-radius: 999px;
-    background: $gradient-primary-hs;
+  }
+  
+  &.primary {
+    &::after {
+      background: $gradient-primary-hs;
+    }
+  }
+  &.accent {
+    &::after {
+      background: $gradient-accent-hs;
+    }
   }
 }

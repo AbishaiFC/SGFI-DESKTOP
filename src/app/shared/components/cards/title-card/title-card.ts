@@ -9,4 +9,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class TitleCard {
   @Input({required: true}) title: string = '';
+  @Input() color: string = 'primary';
 }

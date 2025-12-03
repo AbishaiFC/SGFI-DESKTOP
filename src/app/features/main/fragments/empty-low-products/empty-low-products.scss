@@ -41,12 +41,16 @@ app-white-card {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: $spacing-4;
+       padding: $spacing-14 0 $spacing-14 0;
         gap: $spacing-4;
 
         p{
             color: $neutral-700;
             font-size: $font-size-xl;
+        }
+
+        img {
+            width: 14%;
         }
     }
 }

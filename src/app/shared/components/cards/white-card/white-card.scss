@@ -5,13 +5,19 @@
 
 .back{
     padding-bottom: 2px;
-    background: $gradient-primary-hs;
     border-radius: $radius-2;
-
+    
     .front{
         background-color: $neutral-100;
         border-radius: $radius-2;
         padding: $spacing-3;
         overflow: hidden;
+    }
+    
+    &.primary {
+        background: $gradient-primary-hs;
+    }
+    &.accent {
+        background: $gradient-accent-hs;
     }
 }

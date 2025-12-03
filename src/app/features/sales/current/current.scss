@@ -41,32 +41,7 @@
      --------------------------------------------------------------------- */
     .cart {
         /* proporción más estrecha que un sidebar normal */
-        flex: 0 0 20%;                       
-        /* punto de ruptura visual – evita que los precios se corten */
-        min-width: 280px;                    
-    }
-
-    /* --------------------------------------------------------------------- 
-                         Botón flotante de administrador
-     --------------------------------------------------------------------- */
-    button[mat-icon-button] {
-        position: fixed;
-        top: $spacing-8;
-        right: $spacing-8;
-        border-radius: $radius-2;
-        background-color: $neutral-300;
-        color: $neutral-800;
-
-        mat-icon {
-            font-size: $font-size-2xl;
-            width: $font-size-2xl;
-            height: $font-size-2xl;
-        }
-
-        &:hover{
-            border-radius: $radius-4;
-            background-color: $neutral-400;
-        }
+        flex: 0 0 20%;                                         
     }
 }
 

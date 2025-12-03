@@ -10,5 +10,6 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class Title {
   @Input() title: string = "";
+  @Input() color: string = "primary";
   @Input({required: true}) icon: boolean = false;
 }

@@ -29,22 +29,24 @@
  * └────────────────────────────────────────┘
  */
 
-div {
-    padding: $spacing-12 $spacing-4 $spacing-12 $spacing-4;
-    gap: $spacing-4;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+app-white-card {
+    div {
+        padding: $spacing-32 0 $spacing-32 0;
+        gap: $spacing-8;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-    p {
-        color: $neutral-600;
-        font-size: $font-size-2xl;
-        text-align: center;
-        max-width: 60%;
-    }
+        p {
+            color: $neutral-600;
+            font-size: $font-size-2xl;
+            text-align: center;
+            max-width: 60%;
+        }
 
-    img {
-        width: 50%;
+        img {
+            width: 20%;
+        }
     }
 }

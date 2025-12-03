@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { WhiteCard } from "../cards/white-card/white-card";
 import { MatIconModule } from '@angular/material/icon';
 
@@ -10,5 +10,6 @@ import { MatIconModule } from '@angular/material/icon';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Kpi {
-
+  @Input({required: true}) icon: string = ""
+  @Input({required: true}) title: string = ""
 }

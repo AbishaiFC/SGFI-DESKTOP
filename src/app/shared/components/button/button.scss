@@ -1,25 +1,12 @@
-@import '../../../../styles/gradients';
-@import '../../../../styles/colors';
-@import '../../../../styles/border-radius';
+@import '../../../../styles/mixins/button-mixin.scss';
 
-
-button[mat-fab]{
-    background: $gradient-primary-ht;
-    color: $neutral-100;
-    transition: background 0.6s ease-in;
-    border-radius: $radius-2;
-    box-shadow: none;
-
-    mat-icon {
-        transition: transform 0.3s ease-in-out;
-    }
-
-    &:hover{
-        background: $gradient-primary-hti;
-        box-shadow: none;
-        
-        mat-icon{
-            transform: scale(1.05) translateX(2px);
-        }
-    }
+// Botón primario
+button[mat-fab].primary {
+    @include button($gradient-primary-ht, $gradient-primary-hti);
 }
+
+// Botón accent
+button[mat-fab].accent {
+    @include button($gradient-accent-ht, $gradient-accent-hti);
+}
+

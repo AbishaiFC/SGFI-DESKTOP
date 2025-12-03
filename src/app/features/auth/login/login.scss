@@ -4,8 +4,7 @@
 @import '../../../../styles/font-weights';
 
 .page {
-    height: 100%;
-    padding: $spacing-40;
+    padding: $spacing-20 0 $spacing-20 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,23 +14,42 @@
     }
 
     app-gray-card {
-        section{
-            padding: $spacing-2;
+        form {
+            padding: $spacing-8;
             display: flex;
-            gap: $spacing-2;
+            flex-direction: column;
             align-items: center;
+        }
+        
+        .forgot {
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            text-align: left;
+            justify-content: center;
+            align-items: center;
+            gap: $spacing-2;
             color: $primary-100;
-            font-size: $font-size-xl;
+            font-size: $font-size-md;
 
             a{
+                margin: 0px;
+                padding: 0px;
                 color: $primary-100;
                 font-weight: $font-weight-medium;
             }
+        }
+
+         .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 
     section{
         display: flex;
+        margin: $spacing-4;
         gap: $spacing-2;
         align-items: center;
         color: $primary-100;
@@ -41,12 +59,26 @@
             color: $primary-100;
             font-weight: $font-weight-medium;
         }
+    }    
+}
+
+/* ==========================================================================
+                    MEDIA QUERIES – Responsive breakpoints
+   ========================================================================== */
+
+
+/* -------------------------------------------------------------------------- 
+                Tablet pequeña & laptops pequeñas (≤1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .page {
+        
     }
-    
-            .button {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-    
+}
+
+/* -------------------------------------------------------------------------- 
+                                Móvil (≤768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+   
 }

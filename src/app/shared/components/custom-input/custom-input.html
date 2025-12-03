@@ -1,0 +1,28 @@
+<mat-form-field appearance="outline">
+  <mat-label>{{ label }}</mat-label>
+  @if (prefixIcon != "") {
+    <mat-icon
+        matIconPrefix
+        class="material-icons-outlined"
+        [fontIcon]="prefixIcon"
+    >prefixIcon</mat-icon>
+  }
+  <input
+    matInput
+    [type]="typeValue"
+    [placeholder]="placeholder"
+    [value]="value"
+    (input)="onInputChange($event)"
+    (blur)="onBlur()"
+    [disabled]="disabled"
+  />
+  @if (suffixIcon != "") {
+    <mat-icon
+        matIconSuffix
+        class="material-icons-outlined"
+        [fontIcon]="suffixIcon"
+    >suffixIcon</mat-icon>
+  }
+
+  <mat-error>{{errorMessage}}</mat-error>
+</mat-form-field>

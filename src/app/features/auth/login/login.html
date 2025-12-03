@@ -2,12 +2,16 @@
     <app-title [icon]=false title="Iniciar Sesión"/>
     
     <app-gray-card>
-        <section>
-            <p>¿Olvidaste tu contraseña?</p>
-            <a routerLink="/forgot-password">Click aquí</a>
-        </section> 
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <app-custom-input formControlName="email" label="Correo electrónico" typeValue="email" placeholder="ejemplo@correo.com" prefixIcon="email"/>
+            <app-custom-input formControlName="password" label="Contraseña" typeValue="password" placeholder="Mínimo 6 caracteres" prefixIcon="lock"/>
+            <div class="forgot">
+                <p>¿Olvidaste tu contraseña?</p>
+                <a routerLink="/forgot-password">Click aquí</a>
+            </div> 
+        </form>
         <div class="button">
-            <app-button routerLink="/dashboard"/>
+            <app-button routerLink="/dashboard" icon="send" title="Inicio"/>
         </div>
     </app-gray-card>
 
@@ -15,4 +19,6 @@
         <p>¿No tienes una cuenta?</p>
         <a routerLink="/register">Crea una aquí</a>
     </section>
+
+    <app-redirect-button icon="chevron_left" position="left" routerLink="/current"/>
 </div>
