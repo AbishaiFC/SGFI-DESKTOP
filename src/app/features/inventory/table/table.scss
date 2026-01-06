@@ -1,0 +1,74 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/gradients';
+@import '../../../../styles/border-radius';
+@import '../../../../styles/font-weights';
+@import '../../../../styles/spacings';
+@import '../../../../styles/mixins/table-button-mixin.scss';
+@import '../../../../styles/mixins/table-mixin.scss';
+
+table{
+    @include table($gradient-primary-hs)
+}
+
+/*
+ * ====================================
+ *       Estilos de las columnas
+ * ====================================
+ */
+ .mat-column-price, 
+ .mat-column-stock {
+    text-align: center;
+    width: 70px;
+ }
+
+ .mat-column-actions {
+    text-align: center;
+    width: 140px;
+    
+    div{
+        justify-content: center;
+        align-items: center;
+        padding: 0 $spacing-2;
+        display: flex;
+        gap: $spacing-2;
+    }
+
+    button {
+        &.delete{
+            @include table-button($gradient-accent-ht, $gradient-accent-hti);
+        }
+        &.edit{
+            @include table-button($gradient-primary-ht, $gradient-primary-hti)
+        }
+    }
+}
+
+/*
+ * ====================================
+ *       Estilos personalizados
+ * ====================================
+ */
+.low-stock {
+    font-weight: $font-weight-medium;
+    background: rgba($color: $accent-200, $alpha: 0.05);
+    color: $accent-200;
+    
+    &::after {
+        content: '⚠';
+        color: $accent-100;
+        margin-left: 4px;
+        font-size: 0.85em;
+    }
+    
+}
+
+/*
+* ====================================
+*       Estilos del paginador
+* ====================================
+*/
+.mat-mdc-paginator {
+    background: transparent !important;
+    color: $primary-200;
+    font-family: 'Inter', sans-serif;
+}

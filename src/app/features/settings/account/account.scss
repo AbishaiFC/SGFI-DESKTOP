@@ -3,6 +3,7 @@
 @import '../../../../styles/colors';
 @import '../../../../styles/font-sizes';
 @import '../../../../styles/border-radius';
+@import '../..7../../../../../styles/mixins/table-button-mixin.scss';
 
 /**
  * =============================================================================
@@ -50,18 +51,7 @@ app-white-card {
         }
 
         button[mat-icon-button]{
-            background: $gradient-primary-ht;
-            border-radius: $radius-2;
-            color: $neutral-100;
-            transition: background 300ms ease-in-out;
-
-            &:hover {
-                background: $gradient-primary-hti;
-
-                mat-icon {
-                    transform: scale(1.05);
-                }
-            }
+            @include table-button($gradient-primary-vt, $gradient-primary-vti)
         }
     }
 

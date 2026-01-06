@@ -1,4 +1,15 @@
 @import '../../../../styles/mixins/button-mixin.scss';
+@import '../../../../styles/colors';
+@import '../../../../styles/spacings';
+@import '../../../../styles/border-radius';
+
+button[mat-fab] {
+  transition: 
+    background 200ms ease,
+    opacity 200ms ease,
+    transform 200ms ease;
+}
+
 
 // Botón primario
 button[mat-fab].primary {
@@ -10,3 +21,45 @@ button[mat-fab].accent {
     @include button($gradient-accent-ht, $gradient-accent-hti);
 }
 
+button[mat-fab]:disabled {
+  opacity: 0.5;
+  background: $neutral-500;
+  cursor: not-allowed;
+}
+
+/*
+ * Animación de Carga
+ */
+div{
+    border: solid 2px $primary-200;
+    padding: $spacing-1;
+    border-radius: $radius-2;
+
+    .loader {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        display: block;
+        margin:15px auto;
+        position: relative;
+        background: $neutral-100;
+        box-shadow: -24px 0 $neutral-100, 24px 0 $neutral-100;
+        box-sizing: border-box;
+        animation: shadowPulse 2s linear infinite;
+    }
+}
+
+@keyframes shadowPulse {
+  33% {
+    background: $neutral-100;
+    box-shadow: -24px 0 $primary-200, 24px 0 $neutral-100;
+  }
+  66% {
+    background: $primary-200;
+    box-shadow: -24px 0 $neutral-100, 24px 0 $neutral-100;
+  }
+  100% {
+    background: $neutral-100;
+    box-shadow: -24px 0 $neutral-100, 24px 0 $primary-200;
+  }
+}

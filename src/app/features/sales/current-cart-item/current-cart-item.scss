@@ -1,0 +1,72 @@
+@import '../../../../styles/border-radius';
+@import '../../../../styles/colors';
+@import '../../../../styles/spacings';
+@import '../../../../styles/gradients';
+
+mat-card {
+    display: flex;
+    flex-direction: row;
+    padding: $spacing-4;
+    align-items: center;
+    justify-content: space-between;
+}
+
+mat-card-header {
+    flex: 1 1 auto;
+    margin: 0;
+    padding: 0;
+
+    mat-card-title {
+        color: $primary-200;
+    }
+
+    mat-card-subtitle {
+        color: $neutral-700;
+    }
+}
+
+mat-card-actions {
+    display: flex;
+    flex-direction: row;
+    gap: $spacing-2;
+    
+    button[mat-icon-button]{
+       mat-icon {
+            background: $gradient-primary-ht;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            transition: all 300ms ease-in;
+       }
+       
+       &:hover{
+            mat-icon {
+                background: $gradient-primary-hti;
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                transform: scale(1.1);
+           }
+       }
+    }
+}
+    
+mat-card-footer{
+    button[mat-icon-button]{
+        background: $gradient-accent-ht;
+        border-radius: $radius-2;
+        transition: all 300ms ease-in;
+        
+        mat-icon {
+            color: $neutral-100;
+        }
+
+        &:hover{
+            background: $gradient-accent-hti;
+            
+            mat-icon {
+                transform: scale(1.1);
+            }
+        }
+    }
+}

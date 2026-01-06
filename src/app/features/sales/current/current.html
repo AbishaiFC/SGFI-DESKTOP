@@ -2,14 +2,35 @@
     <div class="products">
         <app-title [icon]=false title="Productos"/>
         <app-gray-card>
-            <app-current-empty />
+            @if (products()) {
+                <app-current-inventory [products]="products() ?? []" />
+            }@else {
+                <div class="empty">
+                    <app-current-empty detail="Aún no hay productos registrados en el inventario." src="/assets/stock-out.svg"/>
+                </div>
+            }
         </app-gray-card>
     </div>
     <div class="cart">
         <app-title [icon]=true />
-        <app-gray-card>
-            <app-cart-empty />
-        </app-gray-card>
+        @if(saleId()){
+            <div class="current-cart">
+                <app-gray-card>
+                    <app-current-cart [dataSale]="pendingSale()" [isLoading]="isLoading()" />
+                </app-gray-card>
+                <div class="buttons">
+                    <app-button icon="close" title="Cancelar venta" type="button" (clicked)="deleteSale()" color="accent" [disabled]="isLoading()" />
+                    <app-button icon="check" title="Confirmar venta" type="button" (clicked)="registerSale()" [loading]="isLoading()" />
+                </div>
+            </div>
+        }@else {
+            <div class="empty-cart">
+                <app-gray-card>
+                    <app-cart-empty />
+                </app-gray-card>
+                <app-button icon="add" title="Nueva venta" type="button" (clicked)="newSale()"/>
+            </div>
+        }
     </div>
     <app-redirect-button routerLink="/login" icon="chevron_right" position="right"/>
 </div>

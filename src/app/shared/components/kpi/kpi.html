@@ -1,11 +1,11 @@
 <app-white-card>
     <div class="card">
         <mat-icon class="material-icons-outlined main-icon" [fontIcon]="icon"></mat-icon>
-        <div class="trending">
-            <mat-icon class="material-icons-outlined" fontIcon="trending_flat"></mat-icon>
-            0%
+        <div class="trending" [ngClass]="trendClass()">
+            <mat-icon class="material-icons-outlined" [fontIcon]="trendIcon()"></mat-icon>
+            {{percentageChange()}}%
         </div>
     </div>
     <h2>{{title}}</h2>
-    <p>$0,00 MXN</p>
+    <p>{{formattedValue()}}</p>
 </app-white-card>

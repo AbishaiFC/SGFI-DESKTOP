@@ -1,0 +1,66 @@
+@import '../colors';
+@import '../border-radius';
+@import '../font-weights';
+@import '../spacings';
+
+@mixin table($gradient){
+    /*
+    * ====================================
+    *          Estilos del Header
+    * ====================================
+    */
+    .mat-mdc-table {
+        border-collapse: separate !important;
+        border-spacing: 0;
+        background: transparent !important;
+    }
+
+    .mat-mdc-header-row {
+        background: $gradient !important;
+        background-color: transparent;
+    }
+
+    .mat-mdc-header-cell {
+        background: transparent !important; 
+        color: $neutral-100; 
+        border-bottom: none;
+
+        padding-top: $spacing-4;
+        padding-bottom: $spacing-4;
+    }
+
+    .mat-mdc-header-cell:first-of-type {
+        border-top-left-radius: $radius-1;  
+        border-bottom-left-radius: $radius-1; 
+        padding-left: $spacing-6;
+    }
+
+    .mat-mdc-header-cell:last-of-type {
+        border-top-right-radius: $radius-1;
+        border-bottom-right-radius: $radius-1; 
+        padding-right: $spacing-6;
+    }
+
+    // Estilo svg de sorting
+    ::ng-deep .mat-sort-header-arrow {
+        color: $neutral-100 !important;
+    }
+
+    /*
+    * ====================================
+    *         Estilos de las filas
+    * ====================================
+    */
+    .mat-mdc-cell {
+        border: none 0px transparent !important;
+    }
+
+    .mat-mdc-row:nth-child(odd) {
+        background-color: $neutral-100;
+    }
+        
+    .mat-mdc-row:nth-child(even) {
+        background-color: $neutral-200;
+    }
+
+}

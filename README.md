@@ -41,7 +41,8 @@ src/
     │
     ├── features/                     # Módulos principales lazy-loaded
     │   ├── auth/                     # Login, register, change-password
-    │   ├── dashboard/                # Métricas principales
+    │   ├── dashboard/                # Componente layout de la dashboard
+    │   ├── main/                     # Secciones  que componen la dashboard
     │   ├── inventory/                # Gestión de productos (solo admin)
     │   ├── sales/                    # Punto de venta en tiempo real
     │   ├── reports/                  # Reportes y exportación (solo admin)

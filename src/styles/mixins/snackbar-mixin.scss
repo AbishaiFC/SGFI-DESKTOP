@@ -1,0 +1,32 @@
+@import '../font-sizes';
+@import '../spacings';
+
+@mixin snackbar($gradient){
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  gap: $spacing-4;
+  padding: $spacing-2;
+
+    
+ 
+  .mdc-snackbar__surface {
+    background: $gradient !important;
+  }
+    
+    mat-icon {
+        font-size: $font-size-4xl;
+        width: $font-size-4xl;
+        height: $font-size-4xl;
+    }
+
+    h3, p {
+        margin: 0;
+        padding: 0;
+    }
+
+    p {
+      width: 250px;
+      font-size: $font-size-sm;
+    }
+}

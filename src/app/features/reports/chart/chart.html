@@ -1,1 +1,10 @@
-<p>chart works!</p>
+<app-white-card>
+    <app-title-card title="Venta semanal"/>
+    <canvas 
+        baseChart
+        [data]="barChartData()"
+        [options]="barChartOptions"
+        type="bar"
+        >
+    </canvas>
+</app-white-card>

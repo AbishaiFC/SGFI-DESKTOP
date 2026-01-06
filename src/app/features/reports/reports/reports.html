@@ -1,10 +1,17 @@
 <div class="page">
     <div class="table">
-        <app-empty-table />
+        @if(sales()){
+            <app-table [sales]="sales()!"/>
+        }@else {
+            <app-empty-table />
+        }
     </div>
     <div class="chart">
-        
-        <app-excel-format />
-        <app-empty-chart />
+        @if(reportsSales()){
+            <app-chart [sales]="reportsSales()!"/>
+        }@else {
+            <app-empty-chart />
+        }
+        <app-excel-format (dateRange)="onSelectedDates($event)" [salesLength]="reportsSales()?.length ?? 0" />
     </div>
 </div>

@@ -1,10 +1,13 @@
+@let accountData = authStore.account();
+@let pageData = { title: title(), subtitle: subtitle() };
+
 <div class="main-container">
     <section class="title">
-        <h2>Página Principal</h2>
-        <p>Bienvenido de vuelta, Usuario</p>
+        <h2>{{ pageData.title }}</h2>
+        <p>{{ pageData.subtitle }}</p>
     </section>
     <section class="user">
         <mat-icon class="material-icons-outlined" fontIcon="person" routerLink="/dashboard/settings"></mat-icon>
-        <p>Usuario</p>
+        <p>{{ accountData?.full_name ?? 'Usuario' }}</p>
     </section>
 </div>

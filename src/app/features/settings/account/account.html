@@ -1,8 +1,10 @@
+@let accountData = authStore.account();
+
 <app-white-card>
     <section>
         <div>
             <strong>Administrador</strong>
-            <p>admin</p>
+            <p>{{accountData?.full_name ?? 'Admin'}}</p>
         </div>
         <button mat-icon-button routerLink="/user">
             <mat-icon class="material-icons-outlined" fontIcon="edit"></mat-icon>
@@ -11,7 +13,7 @@
     <section>
         <div>
             <strong>Correo Electrónico</strong>
-            <p>example@gmail.com</p>
+            <p>{{accountData?.email ?? 'example@gmail.com'}}</p>
         </div>
         <button mat-icon-button routerLink="/email">
             <mat-icon class="material-icons-outlined" fontIcon="edit"></mat-icon>

@@ -15,11 +15,10 @@
  * Estructura general de la página (desktop):
  * ┌────────────────────────────────────────────────────────────────────────────┐
  * │ .current (flex row)                                                        │
- * │   ├─ .products (flex: 1)     → Catálogo / búsqueda de productos (≈80%)    │
+ * │   ├─ .products (flex: 1)     → Catálogo / búsqueda de productos (≈80%)     │
  * │   └─ .cart     (flex: 0 0 20%) → Carrito de venta actual                   │
  * │                                                                            │
  * │      botón flotante (mat-icon-button)                                      │
- * │         posición fija top-right                                            │
  * └────────────────────────────────────────────────────────────────────────────┘
  *
  * En ≤1200px → todo pasa a columna vertical (productos arriba, carrito abajo)
@@ -35,13 +34,36 @@
      --------------------------------------------------------------------- */
     .products {
         flex: 1 1 0;
+        
+        .empty{
+            padding: $spacing-16 0;
+        }
     }
     /* --------------------------------------------------------------------- 
             Carrito lateral – ancho fijo del 20% para mantener legibilidad
      --------------------------------------------------------------------- */
     .cart {
         /* proporción más estrecha que un sidebar normal */
-        flex: 0 0 20%;                                         
+        flex: 0 0 20%; 
+
+        
+        .empty-cart, .current-cart {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-4;
+        }
+
+        .buttons {
+            display: flex;
+            width: 100%;
+            gap: $spacing-4;
+
+            app-button {
+                width: 100%;
+            }
+        }
+
+
     }
 }
 
@@ -54,7 +76,7 @@
    -------------------------------------------------------------------------- */
 @media (max-width: 1200px) {
     .current{
-        flex-direction: column;
+        flex-direction: column-reverse;
 
         .products,
         .cart {

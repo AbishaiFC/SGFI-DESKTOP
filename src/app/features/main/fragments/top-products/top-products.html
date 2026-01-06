@@ -1,0 +1,12 @@
+<app-white-card>
+    <app-title-card title="Top 5 más vendidos"></app-title-card>
+    <div class="ranking">
+        @for (product of products(); track $index) {
+            <div class="top" [ngClass]=`rank-${$index.toString()}`>
+                <mat-icon fontIcon="workspace_premium"></mat-icon>
+                <h3>{{product.name}}</h3>
+                <p>{{product.quantity_sold}}</p>
+            </div>
+        }
+    </div>
+</app-white-card>

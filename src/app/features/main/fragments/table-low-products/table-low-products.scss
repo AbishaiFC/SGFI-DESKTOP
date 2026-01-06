@@ -1,0 +1,61 @@
+@import '../../../../../styles/spacings';
+@import '../../../../../styles/gradients';
+@import '../../../../../styles/mixins/table-mixin.scss';
+
+
+app-white-card {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-2;
+
+    table {
+        padding: $spacing-4;
+        background: transparent;
+
+        .mat-mdc-row {
+            color: $accent-300;
+        }
+        @include table($gradient-accent-hs);
+
+    }
+}
+
+/*
+ * ====================================
+ *       Estilos de las columnas
+ * ====================================
+ */
+ .mat-column-price, 
+ .mat-column-stock {
+    text-align: center;
+    width: 70px;
+ }
+
+/*
+* ====================================
+*       Estilos del paginador
+* ====================================
+*/
+.mat-mdc-paginator {
+    background: transparent !important;
+    color: $accent-200;
+    font-family: 'Inter', sans-serif;
+}
+
+/*
+ * ====================================
+ *       Estilos personalizados
+ * ====================================
+ */
+.low-stock {
+    background: rgba($color: $accent-100, $alpha: 0.05) !important;
+    font-weight: $font-weight-medium;
+    
+    &::after {
+        content: '⚠';
+        color: $accent-100;
+        margin-left: 4px;
+        font-size: 0.85em;
+    }
+    
+}

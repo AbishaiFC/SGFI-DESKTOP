@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, input } from '@angular/core';
 
 @Component({
   selector: 'app-current-empty',
@@ -8,5 +8,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CurrentEmpty {
-
+  @Input() detail: string = '';
+  @Input() src: string = '';
 }

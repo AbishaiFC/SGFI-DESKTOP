@@ -1,0 +1,35 @@
+@import '../../../../styles/mixins/table-mixin.scss';
+@import '../../../../styles/gradients';
+@import '../../../../styles/colors';
+
+table {
+    @include table($gradient-primary-hs)
+}
+
+.mat-column-timestamp {
+    text-align: center;
+    width: 150px;
+}
+
+.mat-column-products{
+    text-align: center;
+
+    mat-list-item {
+        text-align: left;
+
+        &:hover {
+            background-color: rgba($color: $primary-100, $alpha: 0.05);
+            cursor: pointer;
+        }
+    }
+}
+/*
+* ====================================
+*       Estilos del paginador
+* ====================================
+*/
+.mat-mdc-paginator {
+    background: transparent !important;
+    color: $primary-200;
+    font-family: 'Inter', sans-serif;
+}

@@ -1,10 +1,29 @@
 <app-white-card>
     <app-title-card title="Formato Excel" />
-    <div class="button">
-        <app-button icon="download" title="Descargar"/>
-    </div>
+    <mat-calendar 
+        [selected]="selectedRange()" 
+        (selectedChange)="onSelectedChange($event)">
+    </mat-calendar>
+
     <div class="preview">
-        <p><strong>Fecha:</strong> 28/11/2005:28/11/2005</p>
-        <strong>0 ventas</strong>
+        <p>
+            <strong>Fecha: </strong>
+            @if (selectedRange().start) {
+                {{ selectedRange().start | date: 'yyyy-MM-dd' }}
+            } @else { 
+                YYYY-MM-DD 
+            }
+            : 
+            @if (selectedRange().end) {
+                {{ selectedRange().end | date: 'yyyy-MM-dd' }}
+            } @else { 
+                YYYY-MM-DD 
+            }
+        </p>
+        
+        <strong>{{salesLength()}} ventas</strong>
     </div>
 </app-white-card>
+<div class="button">
+    <app-button icon="download" title="Descargar" [disabled]="!selectedRange().start || !selectedRange().end" [loading]="isDownloading()" (clicked)="onDownload()"/>
+</div>

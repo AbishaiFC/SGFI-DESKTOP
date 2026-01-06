@@ -4,7 +4,7 @@
 @import '../../../../styles/font-weights';
 
 .page {
-    padding: $spacing-40;
+    padding: $spacing-14;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,19 +15,30 @@
 
     app-gray-card{
         form{
+            width: 450px;
+            padding: $spacing-12;
             display: flex;
             flex-direction: column;
+            gap: $spacing-2;
+            
+            .button {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+
+                app-button{
+                    width: 80%;
+                }
+            }
         }
 
-        .button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
     }
 
     section{
         display: flex;
+        margin-top: $spacing-4;
         gap: $spacing-2;
         align-items: center;
         color: $primary-100;

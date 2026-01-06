@@ -21,10 +21,18 @@ export const routes: Routes = [
     { path: 'forgot-password', component: ForgotPassword },
     { path: 'dashboard', component: Dashboard,
         children: [
-            { path: '', component: Main },
-            { path: 'inventory', component: Inventory },
-            { path: 'reports', component: Reports },
-            { path: 'settings', component: Settings }
+            { path: '', component: Main, data: {
+                title: 'Página Principal', subtitle: '¡Bienvenido de vuelta!'
+            }},
+            { path: 'inventory', component: Inventory, data: {
+                title: 'Inventario', subtitle: '¡Vamos a mantener tus productos en orden!'
+            }},
+            { path: 'reports', component: Reports, data: {
+                title: 'Ventas', subtitle: '¡Revisa, compara y analiza para seguir creciendo!'
+            }},
+            { path: 'settings', component: Settings, data: {
+                title: 'Cuenta', subtitle: '¡Manten tus datos siempre actualizados!'
+            }}
         ]
     },
     { path: 'email', component: Email },

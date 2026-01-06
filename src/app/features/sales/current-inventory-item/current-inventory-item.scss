@@ -1,0 +1,72 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/spacings';
+@import '../../../../styles/gradients';
+@import '../../../../styles/border-radius';
+@import '../../../../styles/font-weights';
+
+mat-card {
+    padding: $spacing-2;
+    border-bottom: solid 2px $primary-200;
+    min-height: 200px;
+    max-height: 200px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    &::after{
+        content: '';
+        height: 4px;
+        width: 40%;
+        background: $gradient-primary-hs;
+        border-radius: 999px;
+        left: 50%;
+        top: 6px;
+        transform: translateX(-50%);
+    }
+    
+    mat-card-title {
+        color: $primary-300;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-height: 54px;
+    }
+    
+    mat-card-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        padding: $spacing-2;
+        flex: 1 1 auto;
+    }
+    
+    mat-card-footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: $spacing-2;
+        flex-shrink: 0;
+
+        button[mat-icon-button]{
+            width: 100%;
+            border-radius: $radius-2;
+            background: $gradient-primary-ht;
+            color: $neutral-100;
+            transition: all 300ms ease;
+            
+            &:hover{
+                background: $gradient-primary-hti;
+                transform: translateY(-1px);
+
+                mat-icon{
+                    transform: scale(1.05);
+                }
+            }
+
+            &:active {
+                transform: translateY(0);
+            }
+        }
+    }
+}

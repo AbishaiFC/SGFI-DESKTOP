@@ -1,0 +1,64 @@
+@import '../../../../styles/border-radius';
+@import '../../../../styles/colors';
+@import '../../../../styles/font-sizes';
+@import '../../../../styles/font-weights';
+@import '../../../../styles/gradients';
+@import '../../../../styles/spacings';
+@import '../../../../styles/mixins/sidebar-button-mixin.scss';
+
+.products {
+    padding: $spacing-4;
+    min-height: 300px;
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-2;
+    overflow: hidden;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar{
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track{
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $gradient-primary-vt;
+        border-radius: $radius-4;
+        border: 2px solid transparent;
+        background-clip: content-box;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: $gradient-primary-vti;
+
+    }
+}
+
+mat-progress-bar {
+    border-radius: 999px;
+    margin: $spacing-4 0;
+}
+
+.resumen {
+    mat-card {
+        border-bottom: solid 2px $primary-200;
+    }
+
+    mat-card-title{
+        padding: $spacing-2;
+        color: $neutral-700;
+    }
+    
+    mat-card-content {
+        color: $primary-200;
+        font-weight: $font-weight-bold;
+        padding: 0 $spacing-4;
+        font-size: $font-size-xl;
+        display: flex;
+        gap: $spacing-8;
+        justify-content: end;
+    }
+}

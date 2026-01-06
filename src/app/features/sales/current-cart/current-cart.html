@@ -1,0 +1,29 @@
+<div class="products">
+    @for (product of productsSale(); track product.item_id) {
+        <app-current-cart-item 
+            [product]="product" 
+            (increment)="incrementProduct($event.itemId, $event.quantity)"
+            (decrement)="decrementProduct($event.itemId, $event.quantity)"
+            (delete)="deleteProduct($event.itemId)"
+        />
+    }@empty {
+        <app-current-empty detail="No se han añadido productos a esta venta. Escanea un producto o selecciona uno del panel de inventario" src="/assets/hourglass.svg"></app-current-empty>
+    }
+</div>
+@if (isLoading()) {
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}
+<div class="resumen">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                Total:
+            </mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <p>({{totalQuantity() | products}})</p>
+            <p>{{totalAmount() | currency}}</p> 
+        </mat-card-content>
+    </mat-card>
+</div>

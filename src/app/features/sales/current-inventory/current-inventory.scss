@@ -1,0 +1,46 @@
+@import '../../../../styles/spacings';
+@import '../../../../styles/gradients';
+@import '../../../../styles/border-radius';
+@import '../../../../styles/colors';
+
+
+.page{
+    padding: $spacing-4;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-4;
+    width: 100%;
+}
+
+.inventory {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: $spacing-4;
+    max-height: 420px;
+    overflow: hidden;
+    overflow-y: scroll;
+    
+    &::-webkit-scrollbar{
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track{
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $gradient-primary-vt;
+        border-radius: $radius-4;
+        border: 2px solid transparent;
+        background-clip: content-box;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: $gradient-primary-vti;
+
+    }
+}
+

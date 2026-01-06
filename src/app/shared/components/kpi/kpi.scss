@@ -26,6 +26,16 @@
         padding: $spacing-1 $spacing-2 $spacing-1 $spacing-2;
         border-radius: $radius-1;
         gap: $spacing-2;
+
+        &.positive {
+            background-color: rgba($info, 0.2);
+            color: $info;
+        }
+
+        &.negative {
+            background-color: rgba($error, 0.2);
+            color: $error;
+        }
     }
 
 }

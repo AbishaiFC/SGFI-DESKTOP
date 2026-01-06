@@ -1,0 +1,17 @@
+@import '../border-radius';
+
+
+@mixin table-button($gradient, $gradient-hover, $color: $neutral-100){
+    background: $gradient;
+            border-radius: $radius-2;
+            color: $color;
+            transition: background 300ms ease-in-out;
+
+            &:hover {
+                background: $gradient-hover;
+
+                mat-icon {
+                    transform: scale(1.05);
+                }
+            }
+}

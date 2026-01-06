@@ -1,28 +1,44 @@
 <mat-form-field appearance="outline">
+
+  <!-- Nombre del dato solicitado -->
   <mat-label>{{ label }}</mat-label>
+
+  <!-- Icono de la izquierda para asociación -->
   @if (prefixIcon != "") {
     <mat-icon
         matIconPrefix
-        class="material-icons-outlined"
+        class="material-icons-outlined prefix"
         [fontIcon]="prefixIcon"
-    >prefixIcon</mat-icon>
+    ></mat-icon>
   }
+
+  <!-- Input de datos -->
   <input
     matInput
-    [type]="typeValue"
+    [type]="effectiveType"
     [placeholder]="placeholder"
-    [value]="value"
+    [value]="viewValue"
     (input)="onInputChange($event)"
     (blur)="onBlur()"
     [disabled]="disabled"
   />
-  @if (suffixIcon != "") {
-    <mat-icon
-        matIconSuffix
-        class="material-icons-outlined"
-        [fontIcon]="suffixIcon"
-    >suffixIcon</mat-icon>
+
+  <!-- Icono derecho con acción (solo en caso de contraseña)-->
+  @if (effectiveSuffixIcon != "") {
+    <button 
+      class="suffix"
+      mat-icon-button 
+      matSuffix 
+      type="button"
+      (click)="onSuffixClick()"
+      [disabled]="disabled"
+    >
+      <mat-icon class="material-icons-outlined">{{ effectiveSuffixIcon }}</mat-icon>  <!-- Simplifiqué, asumiendo icons de texto como 'visibility' -->
+    </button>
   }
 
-  <mat-error>{{errorMessage}}</mat-error>
+  <!-- Mensaje de error para el Usuario -->
+  @if (hasError) {
+    <mat-error>{{errorMessage || 'Campo inválido'}}</mat-error>
+  }
 </mat-form-field>

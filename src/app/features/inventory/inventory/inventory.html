@@ -1,8 +1,14 @@
+@let inventoryData = inventoryStore.products();
+
 <div class="page">
     <div class="table">
-        <app-empty-table />
+        @if (inventoryData === null) {
+            <app-empty-table />
+        }@else {
+            <app-table [products]="inventoryData" (editProduct)="onEditProduct($event)" />
+        }
     </div>
     <div class="form">
-        <app-form />
+        <app-form [editProduct]="editProduct"/>
     </div>
 </div>

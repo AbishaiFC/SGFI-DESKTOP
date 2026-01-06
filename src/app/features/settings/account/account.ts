@@ -1,9 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { WhiteCard } from "../../../shared/components/cards/white-card/white-card";
 import { MatIconModule } from '@angular/material/icon';
 import { MatIconButton } from '@angular/material/button';
 import { Button } from "../../../shared/components/button/button";
 import { RouterModule } from '@angular/router';
+import { AuthStore } from '../../../core/stores/auth/auth-store';
 
 @Component({
   selector: 'app-account',
@@ -12,6 +13,11 @@ import { RouterModule } from '@angular/router';
   styleUrl: './account.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Account {
+export class Account implements OnInit {
+  // Servicio de almacenamiento de datos de Autenticación
+  readonly authStore = inject(AuthStore);
 
+  ngOnInit(): void {
+    this.authStore.loadAccount().subscribe()
+  }
 }

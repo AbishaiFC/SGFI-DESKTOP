@@ -29,7 +29,10 @@
  */
 
 div {
-    padding: $spacing-12;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 
     p{
         color: $neutral-600;
@@ -38,6 +41,6 @@ div {
     }
 
     img{
-        width: 100%;
+        width: 40%;
     }
 }

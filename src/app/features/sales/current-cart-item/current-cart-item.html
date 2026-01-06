@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ product().name }}</mat-card-title>
+    <mat-card-subtitle>{{ product().price | currency }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions>
+    <button mat-icon-button (click)="handleIncrement()">
+      <mat-icon class="material-icons-outlined" fontIcon="add"></mat-icon>
+    </button>
+    <mat-chip-set>
+      <mat-chip>{{ product().quantity }}</mat-chip>
+    </mat-chip-set>
+    <button mat-icon-button (click)="handleDecrement()">
+      <mat-icon class="material-icons-outlined" fontIcon="remove"></mat-icon>
+    </button>
+  </mat-card-actions>
+  <mat-card-footer>
+    <button mat-icon-button (click)="handleDelete()">
+      <mat-icon class="material-icons-outlined" fontIcon="delete"></mat-icon>
+    </button>
+  </mat-card-footer>
+</mat-card>

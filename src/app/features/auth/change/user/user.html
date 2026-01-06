@@ -1,8 +1,13 @@
-<div>
-    <app-title [icon]=false title="Cambiar Contraseña"/>
+<div class="page">
+    <app-title [icon]=false title="Cambiar Usuario"/>
     
     <app-gray-card>
-        <app-button icon="save" title="Guardar cambios"/>
+        <form [formGroup]="userForm">
+            <app-custom-input formControlName="username" label="Nombre de Usuario" typeValue="text" placeholder="usuario" prefixIcon="person"/>
+            <div class="button">
+                <app-button icon="save" title="Guardar cambios" type="submit"/>
+            </div>
+        </form>
     </app-gray-card>
 
     <section>

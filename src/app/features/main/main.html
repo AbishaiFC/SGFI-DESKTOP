@@ -1,24 +1,58 @@
 <div class="page">
-    <div class="kpi">
-        <app-kpi icon="attach_money" title="Total de ventas del día"/>
-        <app-kpi icon="bar_chart" title="Número de ventas de hoy"/>
-        <app-kpi icon="shopping_cart" title="Productos vendidos hoy"/>
-        <app-kpi icon="shopping_bag" title="Venta promedio"/>
-    </div>
-<div class="sales-kpi">
+  <div class="kpi">
+    <app-kpi
+      icon="attach_money"
+      title="Total de ventas del día"
+      [today]="todaySales().total_sales"
+      [yesterday]="yesterdaySales().total_sales"
+      type="currency"
+    />
+    <app-kpi
+      icon="bar_chart"
+      title="Número de ventas de hoy"
+      [today]="todaySales().sale_count"
+      [yesterday]="yesterdaySales().sale_count"
+    />
+    <app-kpi
+      icon="shopping_cart"
+      title="Productos vendidos hoy"
+      [today]="todaySales().total_products"
+      [yesterday]="yesterdaySales().total_products"
+    />
+    <app-kpi
+      icon="shopping_bag"
+      title="Venta promedio"
+      [today]="todaySales().total_sales / todaySales().sale_count"
+      [yesterday]="yesterdaySales().total_sales / yesterdaySales().sale_count"
+      type="decimal"
+    />
+  </div>
+  <div class="sales-kpi">
     <div class="chart">
+      @if (weeklySales()) {
+        <app-weekly-sales [sales]="weeklySales()!" />
+      }@else {
         <app-empty-chart-sales />
+      }
     </div>
     <div class="products">
+      @if (topProducts()) {
+        <app-top-products [products]="topProducts()!" />
+      }@else {
         <app-empty-top-products />
+      }
     </div>
-</div>
-<div class="inventory-kpi">
+  </div>
+  <div class="inventory-kpi">
     <div class="value">
-        <app-inventory />
+      <app-inventory [value]="inventoryValue()" />
     </div>
     <div class="table">
-        <app-empty-low-products />
+      @if (lowStockProducts()) {
+      <app-table-low-products [products]="lowStockProducts()" />
+      }@else {
+      <app-empty-low-products />
+      }
     </div>
+  </div>
 </div>
-    </div>

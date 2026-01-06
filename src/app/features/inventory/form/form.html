@@ -1,13 +1,17 @@
+@let isCreateForm = (formType === 'create');
+
 <app-white-card>
-    <app-title-card title="Añadir producto"/>
+    <app-title-card [title]="isCreateForm ? 'Añadir producto' : 'Editar Producto'"/>
     <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
-        <app-custom-input formControlName="barcode" label="Código de barras" typeValue="number" placeholder="ej. 123455678" prefixIcon="fit_screen" />
-        <app-custom-input formControlName="name" label="Nombre" typeValue="text" placeholder="ej. Leche" prefixIcon="label" />
-        <app-custom-input formControlName="price" label="Precio" typeValue="number" placeholder="ej. 120" prefixIcon="attach_money"/>
-        <app-custom-input formControlName="stock" label="Stock" typeValue="number" placeholder="ej. 12" prefixIcon="numbers"/>
+        <app-custom-input formControlName="barcode" label="Código de barras" typeValue="number" placeholder="ej. 123455678" prefixIcon="fit_screen" errorMessage="Código de barras no válido"/>
+        <app-custom-input formControlName="name" label="Nombre" typeValue="text" placeholder="ej. Leche" prefixIcon="label" errorMessage="Nombre no válido"/>
+        <app-custom-input formControlName="price" label="Precio" typeValue="number" placeholder="ej. 120" prefixIcon="attach_money" errorMessage="Precio no válido"/>
+        <app-custom-input formControlName="stock" label="Stock" typeValue="number" placeholder="ej. 12" prefixIcon="numbers" errorMessage="Stock no válido"/>
+        <div>
+            <app-button [icon]="isCreateForm ? 'add' : 'edit'" [title]="isCreateForm ? 'Añadir producto' : 'Actualizar'" [disabled]="productForm.invalid" [loading]="formState.state().status === 'loading'" type="submit"/>
+            @if (!isCreateForm) {
+                <app-button icon="cancel" title="Cancelar" color="accent" type="button" (clicked)="onCancel()"/>
+            }
+        </div>
     </form>
-    <div>
-        
-        <app-button icon="add" title="Añadir producto"/>
-    </div>
 </app-white-card>

@@ -49,7 +49,7 @@
     display: flex;
     flex-direction: row;
     /* separación mayor porque hay mucho contenido visual */
-    gap: $spacing-8;
+    gap: $spacing-4;
     
     /* Chart ocupa todo el espacio disponible después del sidebar */
     .chart {

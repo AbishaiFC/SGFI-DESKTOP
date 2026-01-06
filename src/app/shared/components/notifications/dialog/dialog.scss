@@ -1,0 +1,34 @@
+@import '../../../../../styles/colors';
+@import '../../../../../styles/font-weights';
+@import '../../../../../styles/font-sizes';
+@import '../../../../../styles/spacings';
+@import '../../../../../styles/gradients';
+
+.primary {
+    font-weight: $font-weight-semibold;
+    color: $neutral-100 !important;
+    background-color: $primary-200;
+    
+    &:hover {
+        background-color: $primary-300;
+        font-weight: $font-weight-bold;
+    }
+}
+
+h2[mat-dialog-title] {
+    color: $neutral-800;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-lg;
+    text-align: center;
+    margin: $spacing-2;
+    
+    &::after {
+        content: '';
+        display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 999px;
+    background: $gradient-primary-hs;
+    }
+}
+  

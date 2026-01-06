@@ -1,0 +1,71 @@
+@import '../../../../../styles/spacings';
+@import '../../../../../styles/colors';
+@import '../../../../../styles/gradients';
+@import '../../../../../styles/border-radius';
+
+.ranking {
+    display: flex;
+    flex-direction: column;
+    padding: $spacing-4;
+    gap: $spacing-2;
+
+
+    .top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: $spacing-4;
+        padding: $spacing-1 $spacing-2;
+        background: $neutral-300;
+        border-radius: $radius-2;
+        color: $neutral-700;
+
+        h3 {
+            flex: 1 1 auto;
+            text-align: left;
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            border: solid 2px $neutral-100;
+            padding: $spacing-2 $spacing-3;
+            border-radius: $radius-2;
+        }
+        
+    
+        
+        &.rank-0 {
+            background: $gradient-primary-hs;
+            color: $neutral-100;
+        }
+        &.rank-1 {
+            background: $primary-200;
+            color: $neutral-300;
+        }
+        
+        &.rank-2 {
+            background: rgba($primary-100, 0.55);
+    
+            mat-icon {
+                color: $primary-200;
+            }
+
+            p {
+                border-color: $primary-200;
+                color: $primary-200;
+            }
+        }
+        
+        &.rank-3, 
+        &.rank-4{
+            p {
+                border-color: $neutral-600;
+                color: $neutral-700;
+            }
+        }
+    }
+    
+}
+

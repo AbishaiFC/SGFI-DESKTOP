@@ -1,8 +1,14 @@
-<div>
-    <app-title [icon]=false title="Cambiar Contraseña"/>
+<div class="page">
+    <app-title [icon]=false title="Cambiar correo"/>
     
     <app-gray-card>
-        <app-button icon="save" title="Guardar cambios"/>
+        <form [formGroup]="emailForm">
+            <app-custom-input formControlName="email" label="Correo electrónico" typeValue="email" placeholder="ejemplo@correo.com" prefixIcon="email"/>
+            <app-custom-input formControlName="password" label="Contraseña" typeValue="password" placeholder="Mínimo 6 caracteres" prefixIcon="lock" [isPassword]="true" />
+            <div class="button">
+                <app-button icon="save" title="Guardar cambios" type="submit"/>
+            </div>
+        </form>
     </app-gray-card>
 
     <section>

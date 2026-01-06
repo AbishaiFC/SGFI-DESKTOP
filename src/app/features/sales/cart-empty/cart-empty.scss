@@ -31,7 +31,11 @@
  */
 
 div {
-    padding: $spacing-12;
+    padding: $spacing-24 0 $spacing-24 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 
     p{
         color: $neutral-600;
@@ -40,6 +44,6 @@ div {
     }
 
     img{
-        width: 100%;
+        width: 40%;
     }
 }

@@ -22,7 +22,7 @@
     margin: $spacing-4;
     display: flex;
     flex-direction: row;
-    gap: $spacing-8;
+    gap: $spacing-4;
     padding-bottom: $spacing-4;
 
     /* --------------------------------------------------------------------- 
@@ -38,12 +38,22 @@
      --------------------------------------------------------------------- */
     .chart {
         /* ancho fijo proporcional */
-        flex: 0 0 30%;
-        /* punto de ruptura visual – evita que se vuelva ilegible */
+        flex: 0 0 60%;
         min-width: 300px;                   
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         gap: $spacing-4;
+
+        app-excel-format {
+            flex: 1 1 auto;
+        }
+
+        app-empty-chart, 
+        app-chart{
+            flex: 0 0 60%;
+            min-width: 300px;
+        }
+
     }
 }
 
@@ -57,5 +67,9 @@
 @media (max-width: 1024px) {
     .page {
         flex-direction: column;
+        
+        .chart {
+            flex-direction: column;
+        }
     }
 }

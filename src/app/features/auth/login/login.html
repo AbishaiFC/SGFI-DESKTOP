@@ -3,16 +3,16 @@
     
     <app-gray-card>
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            <app-custom-input formControlName="email" label="Correo electrónico" typeValue="email" placeholder="ejemplo@correo.com" prefixIcon="email"/>
-            <app-custom-input formControlName="password" label="Contraseña" typeValue="password" placeholder="Mínimo 6 caracteres" prefixIcon="lock"/>
+            <app-custom-input formControlName="email" label="Correo electrónico" typeValue="email" placeholder="ejemplo@correo.com" prefixIcon="email" errorMessage="Correo no válido"/>
+            <app-custom-input formControlName="password" label="Contraseña" placeholder="Mínimo 6 caracteres" prefixIcon="lock" [isPassword]="true" errorMessage="Contraseña demasiado corta"/>
             <div class="forgot">
                 <p>¿Olvidaste tu contraseña?</p>
                 <a routerLink="/forgot-password">Click aquí</a>
             </div> 
+            <div class="button">
+                <app-button icon="send" title="Inicio" [disabled]="loginForm.invalid" [loading]="formState.state().status === 'loading'" type="submit"/>
+            </div>
         </form>
-        <div class="button">
-            <app-button routerLink="/dashboard" icon="send" title="Inicio"/>
-        </div>
     </app-gray-card>
 
     <section>

@@ -1,1 +1,27 @@
-<p>table works!</p>
+<table mat-table [dataSource]="dataSource">    
+    <!-- Products Column -->
+    <ng-container matColumnDef="products">
+        <th mat-header-cell *matHeaderCellDef>Productos Vendidos</th>
+        <td mat-cell *matCellDef="let element">
+            <mat-list>
+                @for (item of element.products; track $index) {
+                    <mat-list-item>
+                        <span matListItemTitle>{{item.name}}</span>
+                        <span matListItemLine>{{item.quantity}} unidad(es) - {{item.price | currency}}</span>
+                    </mat-list-item>
+                    <mat-divider ></mat-divider>
+                }
+            </mat-list>
+        </td>
+    </ng-container>
+
+    <!-- Date Column -->
+    <ng-container matColumnDef="timestamp">
+        <th mat-header-cell *matHeaderCellDef>Fecha</th>
+        <td mat-cell *matCellDef="let element">{{element.timestamp | date }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSize]="5" showFirstLastButtons aria-label="Seleccionar página"></mat-paginator>

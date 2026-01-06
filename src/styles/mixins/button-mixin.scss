@@ -5,6 +5,7 @@
 
 @mixin button($gradient, $gradient-hover, $color: $neutral-100) {
     background: $gradient;
+    width: 100%;
     color: $color;
     transition: background 0.6s ease-in;
     border-radius: $radius-2;

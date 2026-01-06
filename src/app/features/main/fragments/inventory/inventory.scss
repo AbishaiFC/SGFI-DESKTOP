@@ -35,7 +35,7 @@ app-white-card {
     display: flex;
     flex-direction: column;
 
-    div{
+    .card{
         background-color: $neutral-300;
         margin: $spacing-12 $spacing-4 $spacing-12 $spacing-4;
         gap: $spacing-4;
@@ -46,9 +46,17 @@ app-white-card {
         align-items: center;
         padding: $spacing-8 $spacing-12 $spacing-8 $spacing-12;
 
-        p{
+        .text {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-2;
+        }
+        p, strong{
+            margin: 0;
+            padding: 0;
             color: $neutral-700;
             font-size: $font-size-xl;
+            text-align: center;
         }
     }
 

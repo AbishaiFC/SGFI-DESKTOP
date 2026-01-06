@@ -1,22 +1,20 @@
 <div class="page">
     <app-title [icon]=false title="Crear cuenta"/>
-    
     <app-gray-card>
-        <form [formGroup]="registerForm">
-            <app-custom-input formControlName="username" label="Nombre de Usuario" typeValue="text" placeholder="usuario" prefixIcon="person"/>
-            <app-custom-input formControlName="email" label="Correo electrónico" typeValue="email" placeholder="ejemplo@correo.com" prefixIcon="email"/>
-            <app-custom-input formControlName="password" label="Contraseña" typeValue="password" placeholder="Mínimo 6 caracteres" prefixIcon="lock"/>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <app-custom-input formControlName="full_name" label="Nombre de Usuario" typeValue="text" placeholder="Usuario" prefixIcon="person" errorMessage="Nombre inválido"/>
+            <app-custom-input formControlName="email" label="Correo electrónico" typeValue="email" placeholder="ejemplo@correo.com" prefixIcon="email" errorMessage="Correo no válido" />
+            <app-custom-input formControlName="password" label="Contraseña" typeValue="password" placeholder="Mínimo 6 caracteres" prefixIcon="lock" [isPassword]="true" errorMessage="Contraseña demasiado corta"/>
+            <div class="button">
+                <app-button icon="send" title="Registrarse" [disabled]="registerForm.invalid" [loading]="formState.state().status === 'loading'" type="submit"/>
+            </div>
         </form>
-        <div class="button">
-            <app-button icon="send" title="Registrarse"/>
-        </div>
     </app-gray-card>
 
     <section>
-        <p>Ya tienes una cuenta?</p>
+        <p>¿Ya tienes una cuenta?</p>
         <a routerLink="/login">Inicia sesión aquí</a>
     </section>
 
     <app-redirect-button icon="chevron_left" position="left" routerLink="/current"/>
-
 </div>

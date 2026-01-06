@@ -1,0 +1,18 @@
+<div class="page">
+  <div class="search">
+    <app-custom-input
+      label="Buscar productos"
+      prefixIcon="search"
+      placeholder="Ingresa el nombre de tu producto..."
+      typeValue="text"
+      [formControl]="searchControl"
+    ></app-custom-input>
+  </div>
+  <div class="inventory">
+    @for (product of filteredProducts; track product.item_id) {
+    <app-current-inventory-item [product]="product" />
+    }@empty {
+      <app-current-empty detail="No se encontró ningún producto con ese nombre." src="/assets/stock-out.svg" />
+    }
+  </div>
+</div>

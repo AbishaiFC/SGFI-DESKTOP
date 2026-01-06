@@ -1,0 +1,11 @@
+<h2 mat-dialog-title [align]="'center'">Eliminar producto</h2>
+<mat-dialog-content>
+    <p>Le gustaría eliminar el siguiente producto:</p>
+    <p><strong>Nombre:</strong> {{data.name}}</p>
+    <p><strong>Precio:</strong> {{data.price | currency}}</p>
+    <p><strong>Stock actual:</strong> {{data.stock}}</p>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+    <button matButton [mat-dialog-close]="false">No</button>
+    <button matButton [mat-dialog-close]="true" class="primary" cdkFocusInitial>Si</button>
+</mat-dialog-actions>

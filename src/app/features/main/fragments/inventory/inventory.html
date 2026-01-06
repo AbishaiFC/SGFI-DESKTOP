@@ -1,10 +1,13 @@
 <app-white-card>
     <app-title-card title="Valor del inventario"/>
-    <div>
+    <div class="card">
         <img src="./assets/archive.svg" alt="inventario">
-        <p>0 productos en inventario</p>
+        <div class="text">
+            <strong>{{value | currency}}</strong>
+            <p>de productos en inventario</p>
+        </div>
     </div>
     <section>
-        <app-button icon="add" title="Añadir producto"/>
+        <app-button icon="add" title="Añadir producto" routerLink="/dashboard/inventory"/>
     </section>
 </app-white-card>
